@@ -12,13 +12,13 @@
     <lastBuildDate>Mon, 13 Jun 2022 20:55:37 +0100</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Super cool article that I wrote</title>
-      <link>http://localhost:1313/posts/post-lite-one/</link>
-      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      <title>Developing Smarter AI: Steering Behaviors and Pathfinding Algorithms</title>
+      <link>http://localhost:1313/posts/2d-game--ai-engine/</link>
+      <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
       <author>futurewayne.ludens@gmail.com (Lai (Wayne) Wei)</author>
-      <guid>http://localhost:1313/posts/post-lite-one/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in eleifend justo, vestibulum congue lacus. Quisque est libero, lacinia sed placerat ac, interdum id urna.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/post-lite-one/cover.png" />
+      <guid>http://localhost:1313/posts/2d-game--ai-engine/</guid>
+      <description>In this blog, I’ll walk through my journey of developing AI behaviors, focusing on dynamic steering systems and efficient pathfinding algorithms. From crafting lifelike boid movements to optimizing search strategies in complex environments, this project deepened my understanding of both kinematic motion and algorithmic problem-solving..</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/2d-game--ai-engine/cover.png" />
     </item>
     
     <item>
@@ -32,13 +32,13 @@
     </item>
     
     <item>
-      <title>Super cool article that I wrote</title>
-      <link>http://localhost:1313/posts/post-lite-two/</link>
+      <title>Unity Dialogue Editor</title>
+      <link>http://localhost:1313/posts/unity-dialogue-editor/</link>
       <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
       <author>futurewayne.ludens@gmail.com (Lai (Wayne) Wei)</author>
-      <guid>http://localhost:1313/posts/post-lite-two/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean in eleifend justo, vestibulum congue lacus. Quisque est libero, lacinia sed placerat ac, interdum id urna.</description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/post-lite-two/cover.png" />
+      <guid>http://localhost:1313/posts/unity-dialogue-editor/</guid>
+      <description>A visual custom Unity editor interface for creating and managing branching dialogues.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/unity-dialogue-editor/cover.png" />
     </item>
     
     <item>
