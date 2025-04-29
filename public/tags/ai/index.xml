@@ -18,7 +18,7 @@
       <author>futurewayne.ludens@gmail.com (Lai (Wayne) Wei)</author>
       <guid>http://localhost:1313/posts/2d-game--ai-engine/</guid>
       <description>In this blog, I’ll walk through my journey of developing AI behaviors, focusing on dynamic steering systems and efficient pathfinding algorithms. From crafting lifelike boid movements to optimizing search strategies in complex environments, this project deepened my understanding of both kinematic motion and algorithmic problem-solving..</description>
-      
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/2d-game--ai-engine/cover.png" />
     </item>
     
   </channel>

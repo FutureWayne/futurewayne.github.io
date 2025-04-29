@@ -112,7 +112,7 @@
     "keywords": ["post","AI","Pathfinding"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "670"
+    "wordCount": "253"
   }]
   </script>
 
@@ -584,7 +584,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-01-04T00:00:00&#43;00:00">4 January 2024</time><span class="px-2 text-primary-500">&middot;</span><span>670 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">4 mins</span>
+  <time datetime="2024-01-04T00:00:00&#43;00:00">4 January 2024</time><span class="px-2 text-primary-500">&middot;</span><span>253 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
   
 
   
@@ -743,22 +743,6 @@
         <li><a href="#tuning-with-openframeworks-gui">Tuning with OpenFrameworks GUI</a></li>
       </ul>
     </li>
-    <li><a href="#-pathfinding-algorithms-dijkstra--a-in-action">🧭 Pathfinding Algorithms: Dijkstra &amp; A* in Action</a>
-      <ul>
-        <li><a href="#graph-designs">Graph Designs</a>
-          <ul>
-            <li><a href="#1-valorant-inspired-map">1. <strong>Valorant-Inspired Map</strong></a></li>
-            <li><a href="#2-very-big-graph">2. <strong>Very Big™ Graph</strong></a></li>
-            <li><a href="#3-indoor-obstacle-graph">3. <strong>Indoor Obstacle Graph</strong></a></li>
-          </ul>
-        </li>
-        <li><a href="#optimizing-the-open-list-custom-data-structure">Optimizing the Open List: Custom Data Structure</a></li>
-        <li><a href="#heuristic-strategies-in-a">Heuristic Strategies in A*</a></li>
-        <li><a href="#algorithm-performance-insights">Algorithm Performance Insights</a></li>
-        <li><a href="#heuristic-impact-recap">Heuristic Impact Recap</a></li>
-      </ul>
-    </li>
-    <li><a href="#-conclusion">🚀 Conclusion</a></li>
   </ul>
 </nav>
   </div>
@@ -787,22 +771,6 @@
         <li><a href="#tuning-with-openframeworks-gui">Tuning with OpenFrameworks GUI</a></li>
       </ul>
     </li>
-    <li><a href="#-pathfinding-algorithms-dijkstra--a-in-action">🧭 Pathfinding Algorithms: Dijkstra &amp; A* in Action</a>
-      <ul>
-        <li><a href="#graph-designs">Graph Designs</a>
-          <ul>
-            <li><a href="#1-valorant-inspired-map">1. <strong>Valorant-Inspired Map</strong></a></li>
-            <li><a href="#2-very-big-graph">2. <strong>Very Big™ Graph</strong></a></li>
-            <li><a href="#3-indoor-obstacle-graph">3. <strong>Indoor Obstacle Graph</strong></a></li>
-          </ul>
-        </li>
-        <li><a href="#optimizing-the-open-list-custom-data-structure">Optimizing the Open List: Custom Data Structure</a></li>
-        <li><a href="#heuristic-strategies-in-a">Heuristic Strategies in A*</a></li>
-        <li><a href="#algorithm-performance-insights">Algorithm Performance Insights</a></li>
-        <li><a href="#heuristic-impact-recap">Heuristic Impact Recap</a></li>
-      </ul>
-    </li>
-    <li><a href="#-conclusion">🚀 Conclusion</a></li>
   </ul>
 </nav>
   </div>
@@ -876,7 +844,7 @@
 <blockquote>
 <p>
   <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://github.com/UtahGameAIClass/assignment-1-movement-ai-FutureWayne/assets/39150337/ba5827c4-2492-45bd-861b-7de5d7fc43ae" alt="kinematic" />
+    <img class="my-0 rounded-md" loading="lazy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135101-ba5827c4-2492-45bd-861b-7de5d7fc43ae.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20250428T102254Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=fbf85dd0c5e1bdcb296f81788a810d877b9fdf0e6a87f21439bf6c93003286ea&amp;X-Amz-SignedHeaders=host" alt="img" />
     
   </figure>
 </p>
@@ -896,7 +864,12 @@
 </h3>
 <p>The <code>Seek</code> function drives AI (boids) directly towards a target using maximum force. Without proper drag handling, this can cause overshooting and spiraling effects.</p>
 <blockquote>
-<p><em><strong>Image Placeholder:</strong> Seek behavior demo</em></p>
+<p><em>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135155-c08ccdaa-1c28-4d0f-bc25-a8143b66b890.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20250428T102454Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=98b66657ec513a823797946dac12500afc61c9abd98a5443e54ce2db26af0723&amp;X-Amz-SignedHeaders=host" alt="img" />
+    
+  </figure>
+</em></p>
 </blockquote>
 <hr>
 
@@ -938,6 +911,15 @@
 <li>Fixed slow radius limits flexibility.</li>
 <li>Potential inefficiency in certain scenarios.</li>
 </ul>
+<blockquote>
+<p><em>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135182-bdf4064d-a468-4f7d-9545-1b1f501bb1aa.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20250428T102537Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=6d89c579d35908bbcc16a4239b2043458c1dd2df59fab601b91ead0815ff2a7e&amp;X-Amz-SignedHeaders=host" alt="img" />
+    
+  </figure>
+</em></p>
+</blockquote>
+<hr>
 
 
 <h4 class="relative group">2. <strong>Physics-Based Approach</strong> 
@@ -965,7 +947,12 @@
 <li>More edge cases to manage.</li>
 </ul>
 <blockquote>
-<p><em><strong>Image Placeholder:</strong> Comparison of Arrival Approaches</em></p>
+<p><em>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135209-87bc6446-20f0-4a31-bc0d-ed485599d477.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20250428T102557Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=46c5db74ec9d3c1e30b9196ae94109195a2ddfe88eb59cb1957274b21ab3715c&amp;X-Amz-SignedHeaders=host" alt="img" />
+    
+  </figure>
+</em></p>
 </blockquote>
 <hr>
 
@@ -982,7 +969,12 @@
 </h3>
 <p>Implemented using a &ldquo;wander circle&rdquo; and random binomial targeting, with both velocity matching and physics-based orientation control for smooth rotation.</p>
 <blockquote>
-<p><em><strong>Image Placeholder:</strong> Wander behavior visualization</em></p>
+<p><em>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135230-8b54e4f2-5d81-4da1-b0ec-d08e87098c3f.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20250428T102611Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=ef842b6fdacf1e35ad0c7a556722d6db98761271c2dbc6df2f1d5360e5cf9dd0&amp;X-Amz-SignedHeaders=host" alt="img" />
+    
+  </figure>
+</em></p>
 </blockquote>
 <hr>
 
@@ -1005,7 +997,12 @@
 </ol>
 <p>I optimized this by delegating flocking to a <code>Seek</code> behavior towards a calculated position. Additionally, I introduced a <strong>leader-following system</strong> to maintain group coherence.</p>
 <blockquote>
-<p><em><strong>Image Placeholder:</strong> Flocking with leader-following</em></p>
+<p><em>
+  <figure>
+    <img class="my-0 rounded-md" loading="lazy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135314-f58b4ba0-eaba-4d2c-8a2b-c3901cf02dc8.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20250428T102626Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=d404292755f64151fed6bd2b4a20fdf71fc31a657ba1a1031422dbeb69b773c9&amp;X-Amz-SignedHeaders=host" alt="img" />
+    
+  </figure>
+</em></p>
 </blockquote>
 <hr>
 
@@ -1021,188 +1018,8 @@
     
 </h3>
 <p>To streamline testing, I integrated sliders and buttons via OpenFrameworks GUI for real-time adjustments of parameters like max speed, acceleration, and drag.</p>
-<blockquote>
-<p><em><strong>Image Placeholder:</strong> Screenshot of OpenFrameworks GUI controls</em></p>
-</blockquote>
 <hr>
-
-
-<h2 class="relative group">🧭 Pathfinding Algorithms: Dijkstra &amp; A* in Action 
-    <div id="-pathfinding-algorithms-dijkstra--a-in-action" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-pathfinding-algorithms-dijkstra--a-in-action" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Beyond movement behaviors, efficient navigation is key. I implemented <strong>Dijkstra</strong> and <strong>A*</strong> algorithms across various graph types, optimizing data structures and heuristics for performance.</p>
 <hr>
-
-
-<h3 class="relative group">Graph Designs 
-    <div id="graph-designs" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#graph-designs" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-
-
-<h4 class="relative group">1. <strong>Valorant-Inspired Map</strong> 
-    <div id="1-valorant-inspired-map" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#1-valorant-inspired-map" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-<p>A hand-crafted graph replicating tactical routes from a Valorant map, with weights reflecting both distance and encounter probability.</p>
-<blockquote>
-<p><em><strong>Image Placeholder:</strong> Graph visualization of Valorant map</em></p>
-</blockquote>
-<hr>
-
-
-<h4 class="relative group">2. <strong>Very Big™ Graph</strong> 
-    <div id="2-very-big-graph" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#2-very-big-graph" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-<p>A procedurally generated graph with 2000 nodes to stress-test algorithm scalability. Optimized using spatial partitioning to reduce runtime complexity during node generation.</p>
-<blockquote>
-<p><em><strong>Image Placeholder:</strong> Visualization of large random graph</em></p>
-</blockquote>
-<hr>
-
-
-<h4 class="relative group">3. <strong>Indoor Obstacle Graph</strong> 
-    <div id="3-indoor-obstacle-graph" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#3-indoor-obstacle-graph" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-<p>Simulates an indoor environment using a tile-based system, parsing walkable areas and obstacles from a text file.</p>
-<blockquote>
-<p><em><strong>Image Placeholder:</strong> Grid graph with obstacles representation</em></p>
-</blockquote>
-<hr>
-
-
-<h3 class="relative group">Optimizing the Open List: Custom Data Structure 
-    <div id="optimizing-the-open-list-custom-data-structure" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#optimizing-the-open-list-custom-data-structure" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Standard structures like <code>std::priority_queue</code> had limitations, so I designed a hybrid:</p>
-<ul>
-<li><strong>Priority Queue</strong> for ordered retrieval.</li>
-<li><strong>Hash Map</strong> for fast membership checks and cost updates.</li>
-</ul>
-<p>This approach eliminated costly operations like direct element adjustments while keeping the algorithm efficient.</p>
-<blockquote>
-<p><em><strong>Image Placeholder:</strong> Diagram of custom Open List structure</em></p>
-</blockquote>
-<hr>
-
-
-<h3 class="relative group">Heuristic Strategies in A* 
-    <div id="heuristic-strategies-in-a" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#heuristic-strategies-in-a" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<ul>
-<li><strong>Euclidean Heuristic:</strong> Accurate and admissible for realistic maps.</li>
-<li><strong>Squared Distance Heuristic:</strong> Faster but inadmissible due to overestimation.</li>
-</ul>
-<p>Balancing speed and accuracy was critical, especially when choosing heuristics based on the use case.</p>
-<blockquote>
-<p><em><strong>Image Placeholder:</strong> Heuristic impact comparison</em></p>
-</blockquote>
-<hr>
-
-
-<h3 class="relative group">Algorithm Performance Insights 
-    <div id="algorithm-performance-insights" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#algorithm-performance-insights" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Running both algorithms on the Very Big™ Graph revealed key differences:</p>
-<ul>
-<li><strong>Dijkstra:</strong> Uniform, radial exploration.</li>
-<li><strong>A*:</strong> Targeted, efficient pathfinding thanks to heuristics.</li>
-</ul>
-<blockquote>
-<p><em><strong>Image Placeholder:</strong> Side-by-side comparison of Dijkstra vs A* node expansions</em></p>
-</blockquote>
-<hr>
-
-
-<h3 class="relative group">Heuristic Impact Recap 
-    <div id="heuristic-impact-recap" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#heuristic-impact-recap" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<ul>
-<li><strong>Overestimating Heuristics:</strong> Faster but risks suboptimal paths.</li>
-<li><strong>Underestimating Heuristics:</strong> Guarantees optimal paths but at a higher computational cost.</li>
-</ul>
-<p>Choosing the right heuristic depends on whether speed or path accuracy is prioritized.</p>
-<hr>
-
-
-<h2 class="relative group">🚀 Conclusion 
-    <div id="-conclusion" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-conclusion" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>This project bridged physics-based AI movement with algorithmic navigation, offering a robust foundation for dynamic and intelligent agent behaviors in games or simulations. From fine-tuning steering mechanics to crafting scalable pathfinding systems, I gained hands-on experience balancing realism, efficiency, and computational constraints.</p>
-<p>Stay tuned for future updates where I’ll integrate these systems into more complex AI behaviors!</p>
-<blockquote>
-<p><em><strong>Image Placeholder:</strong> Final showcase of AI navigating with both steering and pathfinding</em></p>
-</blockquote>
-<hr>
-<p><em>Thanks for reading! If you have any questions or suggestions, feel free to reach out or check out the repo <a href="#">here</a>.</em></p>
 
           
           
