@@ -15,24 +15,20 @@ draft: false
 
 ## 🏎️ Dynamic Steering: Kinematic Motion for AI
 
-Creating believable AI movement requires more than just moving from point A to B. I implemented several steering behaviors inspired by boid algorithms, focusing on flexibility and realism.
-
-
-
-
+Creating believable AI movement requires more than just moving from point A to B. I implemented several steering behaviors inspired by boid algorithms, focusing on flexibility and realism. 
 
 ### Kinematic Behavior
 
 The AI (boid) changes its velocity and orientation instantly.
 
-> ![img](https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135101-ba5827c4-2492-45bd-861b-7de5d7fc43ae.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20250428T102254Z&X-Amz-Expires=300&X-Amz-Signature=fbf85dd0c5e1bdcb296f81788a810d877b9fdf0e6a87f21439bf6c93003286ea&X-Amz-SignedHeaders=host)
+> ![](images/Kinematic.gif)
 
 ---
 
 ### Seek Behavior
 The `Seek` function drives AI (boids) directly towards a target using maximum force. Without proper drag handling, this can cause overshooting and spiraling effects.
 
-> ![Kinematic Behavior](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\Kinematic Behavior.gif)
+> ![Seek Behavior](images/Seek%20Behavior.gif)
 
 ---
 
@@ -50,10 +46,11 @@ I explored two distinct methods to refine how AI arrives smoothly at a target:
 - Drag-independent.
 
 **Cons:**
+
 - Fixed slow radius limits flexibility.
 - Potential inefficiency in certain scenarios.
 
-> ![Velocity Matching Approach](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\Velocity Matching Approach.gif)
+> ![](images/Velocity.gif)
 
 ---
 
@@ -66,17 +63,18 @@ I explored two distinct methods to refine how AI arrives smoothly at a target:
 - Maximizes efficiency with constant max acceleration/deceleration.
 
 **Cons:**
+
 - Requires careful drag handling.
 - More edge cases to manage.
 
-> _![Physics-Based Approach](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\Physics-Based Approach.gif)_
+> ![Physics-Based Approach](images/Physics-Based%20Approach.gif)
 
 ---
 
 ### Wandering Behavior
 Implemented using a "wander circle" and random binomial targeting, with both velocity matching and physics-based orientation control for smooth rotation.
 
-> ![Wandering Behavior](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\Wandering Behavior.gif)
+> ![Wandering Behavior](images/Wandering%20Behavior.gif)
 
 ---
 
@@ -88,7 +86,7 @@ Classic flocking combines:
 
 I optimized this by delegating flocking to a `Seek` behavior towards a calculated position. Additionally, I introduced a **leader-following system** to maintain group coherence.
 
-> ![Flocking Behavior](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\Flocking Behavior.gif)
+> ![Flocking Behavior](images/Flocking%20Behavior.gif)
 
 ---
 
@@ -110,7 +108,7 @@ Beyond movement behaviors, efficient navigation is key. I implemented **Dijkstra
 ### 1️⃣ Meaningful Map
 The first graph I developed represents a familiar environment—specifically, one of my favorite maps from the shooter game **Valorant**. This graph schematically outlines all possible routes from the defense spawn to the attack spawn, comprising **38 nodes** and **53 edges**.
 
-> ![](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\image-20250428042651591.png)
+> ![Valorant Map](images/Valorant.png)
 
 To manage this data efficiently, I used a **JSON parser library**, allowing nodes and edges to be read from a single JSON file. Each edge is weighted by: 
 
@@ -119,9 +117,9 @@ To manage this data efficiently, I used a **JSON parser library**, allowing node
 The coefficient reflects the likelihood of encountering an opponent along the path—higher values indicate higher risk.
 
 
-> ![](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\image-20250428042859474.png)
+> ![](images/1.png)
 >
-> ![](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\image-20250428042902970.png)
+> ![](images/2.png)
 
 ---
 
@@ -129,8 +127,6 @@ The coefficient reflects the likelihood of encountering an opponent along the pa
 The second graph is a **large-scale**, randomly generated structure aimed at testing algorithm performance under heavy load. It contains **2000 nodes**, adhering to these generation rules:
 - Nodes are randomly placed with a **minimum spacing**.
 - Each node connects to nearby neighbors, max **5 outgoing connections**.
-
-> _**Image Placeholder:** Visualization of Very Big™ graph_
 
 #### ⚙️ Generation Algorithm:
 1. Start at a central point.
@@ -146,7 +142,7 @@ This approach ensures coherent structure while keeping runtime generation effici
 
 ---
 
-> _![](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\image-20250428043218487.png)_
+> ![](images/Big.png)
 
 ---
 
@@ -156,11 +152,11 @@ This graph simulates indoor navigation using a **tiled system**, where nodes rep
 - `*` = Walkable Node
 - Other symbols = Obstacles
 
-> _![](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\image-20250428043228014.png)_
+> _![](images/Indoor1.png)
 
 Nodes are connected to immediate neighbors, with weights based on Euclidean distance. Nodes adjacent to obstacles are marked inaccessible to prevent collisions.
 
-> _![](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\image-20250428043303326.png)_
+> _![](images/Indoor2.png)
 
 ---
 
@@ -269,9 +265,9 @@ Starting from the center:
 - **Dijkstra:** Explores uniformly outward, forming a circular search pattern.
 - **A\*:** Focused search guided by heuristics, reducing unnecessary node expansions.
 
-> ![](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\image-20250428044302505.png)
+> ![](images/graph1.png)
 >
-> ![](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\image-20250428044306985.png)
+> ![](images/graph2.png)
 
 ---
 
@@ -287,9 +283,9 @@ Starting from the center:
 - Guarantees shortest path.
 - Higher computational cost.
 
-> ![](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\image-20250428044318166.png)
+> ![](images/heuristic1.png)
 >
-> ![](C:\Users\futur\Code\futurewayne.github.io\content\posts\2D Game & AI Engine\image-20250428044325600.png)
+> ![](images/heuristic2.png)
 
 ---
 

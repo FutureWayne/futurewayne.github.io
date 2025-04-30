@@ -112,7 +112,7 @@
     "keywords": ["post","AI","Pathfinding"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "253"
+    "wordCount": "1237"
   }]
   </script>
 
@@ -584,7 +584,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-01-04T00:00:00&#43;00:00">4 January 2024</time><span class="px-2 text-primary-500">&middot;</span><span>253 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">2 mins</span>
+  <time datetime="2024-01-04T00:00:00&#43;00:00">4 January 2024</time><span class="px-2 text-primary-500">&middot;</span><span>1237 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span>
   
 
   
@@ -743,6 +743,51 @@
         <li><a href="#tuning-with-openframeworks-gui">Tuning with OpenFrameworks GUI</a></li>
       </ul>
     </li>
+    <li><a href="#-pathfinding-algorithms-dijkstra--a-in-action">🧭 Pathfinding Algorithms: Dijkstra &amp; A* in Action</a>
+      <ul>
+        <li><a href="#graph-designs">Graph Designs</a></li>
+        <li><a href="#1-meaningful-map">1️⃣ Meaningful Map</a></li>
+        <li><a href="#2-very-big-graph">2️⃣ Very Big™ Graph</a>
+          <ul>
+            <li><a href="#-generation-algorithm">⚙️ Generation Algorithm:</a></li>
+            <li><a href="#-performance-optimization">🚨 Performance Optimization:</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-indoor-environments-with-obstacles">3️⃣ Indoor Environments with Obstacles</a></li>
+      </ul>
+    </li>
+    <li><a href="#-pathfinding-algorithm">⚡ Pathfinding Algorithm</a>
+      <ul>
+        <li><a href="#open-list-data-structure">Open List Data Structure</a>
+          <ul>
+            <li><a href="#-data-structure-comparison">⏱️ Data Structure Comparison</a></li>
+          </ul>
+        </li>
+        <li><a href="#-custom-hybrid-data-structure">🛠️ Custom Hybrid Data Structure</a>
+          <ul>
+            <li><a href="#how-it-works">How It Works:</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#-heuristics">🎯 Heuristics</a>
+      <ul>
+        <li><a href="#-euclidean-heuristic">📏 Euclidean Heuristic</a></li>
+        <li><a href="#-squared-distance-heuristic">📐 Squared Distance Heuristic</a></li>
+      </ul>
+    </li>
+    <li><a href="#-algorithm-analysis">📊 Algorithm Analysis</a>
+      <ul>
+        <li><a href="#performance-on-very-big-graph">Performance on Very Big™ Graph</a></li>
+        <li><a href="#heuristic-impact-on-a">Heuristic Impact on A*</a>
+          <ul>
+            <li><a href="#overestimating-heuristic">Overestimating Heuristic:</a></li>
+            <li><a href="#underestimating-heuristic">Underestimating Heuristic:</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#-conclusion">📝 Conclusion</a></li>
   </ul>
 </nav>
   </div>
@@ -771,6 +816,51 @@
         <li><a href="#tuning-with-openframeworks-gui">Tuning with OpenFrameworks GUI</a></li>
       </ul>
     </li>
+    <li><a href="#-pathfinding-algorithms-dijkstra--a-in-action">🧭 Pathfinding Algorithms: Dijkstra &amp; A* in Action</a>
+      <ul>
+        <li><a href="#graph-designs">Graph Designs</a></li>
+        <li><a href="#1-meaningful-map">1️⃣ Meaningful Map</a></li>
+        <li><a href="#2-very-big-graph">2️⃣ Very Big™ Graph</a>
+          <ul>
+            <li><a href="#-generation-algorithm">⚙️ Generation Algorithm:</a></li>
+            <li><a href="#-performance-optimization">🚨 Performance Optimization:</a></li>
+          </ul>
+        </li>
+        <li><a href="#3-indoor-environments-with-obstacles">3️⃣ Indoor Environments with Obstacles</a></li>
+      </ul>
+    </li>
+    <li><a href="#-pathfinding-algorithm">⚡ Pathfinding Algorithm</a>
+      <ul>
+        <li><a href="#open-list-data-structure">Open List Data Structure</a>
+          <ul>
+            <li><a href="#-data-structure-comparison">⏱️ Data Structure Comparison</a></li>
+          </ul>
+        </li>
+        <li><a href="#-custom-hybrid-data-structure">🛠️ Custom Hybrid Data Structure</a>
+          <ul>
+            <li><a href="#how-it-works">How It Works:</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#-heuristics">🎯 Heuristics</a>
+      <ul>
+        <li><a href="#-euclidean-heuristic">📏 Euclidean Heuristic</a></li>
+        <li><a href="#-squared-distance-heuristic">📐 Squared Distance Heuristic</a></li>
+      </ul>
+    </li>
+    <li><a href="#-algorithm-analysis">📊 Algorithm Analysis</a>
+      <ul>
+        <li><a href="#performance-on-very-big-graph">Performance on Very Big™ Graph</a></li>
+        <li><a href="#heuristic-impact-on-a">Heuristic Impact on A*</a>
+          <ul>
+            <li><a href="#overestimating-heuristic">Overestimating Heuristic:</a></li>
+            <li><a href="#underestimating-heuristic">Underestimating Heuristic:</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#-conclusion">📝 Conclusion</a></li>
   </ul>
 </nav>
   </div>
@@ -843,10 +933,20 @@
 <p>The AI (boid) changes its velocity and orientation instantly.</p>
 <blockquote>
 <p>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135101-ba5827c4-2492-45bd-861b-7de5d7fc43ae.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20250428T102254Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=fbf85dd0c5e1bdcb296f81788a810d877b9fdf0e6a87f21439bf6c93003286ea&amp;X-Amz-SignedHeaders=host" alt="img" />
-    
-  </figure>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/2d-game--ai-engine/images/Kinematic_hu9834330421542973900.gif 330w,
+        /posts/2d-game--ai-engine/images/Kinematic_hu16059506882112601607.gif 660w,
+        /posts/2d-game--ai-engine/images/Kinematic_hu13146784899688671545.gif 1024w,
+        /posts/2d-game--ai-engine/images/Kinematic_hu3485727005700178598.gif 2x"
+        src="/posts/2d-game--ai-engine/images/Kinematic_hu16059506882112601607.gif"
+        alt=""
+      />
+      
+    </figure>
 </p>
 </blockquote>
 <hr>
@@ -864,12 +964,12 @@
 </h3>
 <p>The <code>Seek</code> function drives AI (boids) directly towards a target using maximum force. Without proper drag handling, this can cause overshooting and spiraling effects.</p>
 <blockquote>
-<p><em>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135155-c08ccdaa-1c28-4d0f-bc25-a8143b66b890.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20250428T102454Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=98b66657ec513a823797946dac12500afc61c9abd98a5443e54ce2db26af0723&amp;X-Amz-SignedHeaders=host" alt="img" />
-    
-  </figure>
-</em></p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="images/Seek%20Behavior.gif" alt="Seek Behavior" />
+      
+    </figure>
+</p>
 </blockquote>
 <hr>
 
@@ -912,12 +1012,22 @@
 <li>Potential inefficiency in certain scenarios.</li>
 </ul>
 <blockquote>
-<p><em>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135182-bdf4064d-a468-4f7d-9545-1b1f501bb1aa.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20250428T102537Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=6d89c579d35908bbcc16a4239b2043458c1dd2df59fab601b91ead0815ff2a7e&amp;X-Amz-SignedHeaders=host" alt="img" />
-    
-  </figure>
-</em></p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/2d-game--ai-engine/images/Velocity_hu2007131608412343253.gif 330w,
+        /posts/2d-game--ai-engine/images/Velocity_hu2362578583078876120.gif 660w,
+        /posts/2d-game--ai-engine/images/Velocity_hu9610388613159269154.gif 1024w,
+        /posts/2d-game--ai-engine/images/Velocity_hu16132947358080671661.gif 2x"
+        src="/posts/2d-game--ai-engine/images/Velocity_hu2362578583078876120.gif"
+        alt=""
+      />
+      
+    </figure>
+</p>
 </blockquote>
 <hr>
 
@@ -947,12 +1057,12 @@
 <li>More edge cases to manage.</li>
 </ul>
 <blockquote>
-<p><em>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135209-87bc6446-20f0-4a31-bc0d-ed485599d477.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20250428T102557Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=46c5db74ec9d3c1e30b9196ae94109195a2ddfe88eb59cb1957274b21ab3715c&amp;X-Amz-SignedHeaders=host" alt="img" />
-    
-  </figure>
-</em></p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="images/Physics-Based%20Approach.gif" alt="Physics-Based Approach" />
+      
+    </figure>
+</p>
 </blockquote>
 <hr>
 
@@ -969,12 +1079,12 @@
 </h3>
 <p>Implemented using a &ldquo;wander circle&rdquo; and random binomial targeting, with both velocity matching and physics-based orientation control for smooth rotation.</p>
 <blockquote>
-<p><em>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135230-8b54e4f2-5d81-4da1-b0ec-d08e87098c3f.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20250428T102611Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=ef842b6fdacf1e35ad0c7a556722d6db98761271c2dbc6df2f1d5360e5cf9dd0&amp;X-Amz-SignedHeaders=host" alt="img" />
-    
-  </figure>
-</em></p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="images/Wandering%20Behavior.gif" alt="Wandering Behavior" />
+      
+    </figure>
+</p>
 </blockquote>
 <hr>
 
@@ -997,12 +1107,12 @@
 </ol>
 <p>I optimized this by delegating flocking to a <code>Seek</code> behavior towards a calculated position. Additionally, I introduced a <strong>leader-following system</strong> to maintain group coherence.</p>
 <blockquote>
-<p><em>
-  <figure>
-    <img class="my-0 rounded-md" loading="lazy" src="https://github-production-user-asset-6210df.s3.amazonaws.com/39150337/306135314-f58b4ba0-eaba-4d2c-8a2b-c3901cf02dc8.gif?X-Amz-Algorithm=AWS4-HMAC-SHA256&amp;X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20250428%2Fus-east-1%2Fs3%2Faws4_request&amp;X-Amz-Date=20250428T102626Z&amp;X-Amz-Expires=300&amp;X-Amz-Signature=d404292755f64151fed6bd2b4a20fdf71fc31a657ba1a1031422dbeb69b773c9&amp;X-Amz-SignedHeaders=host" alt="img" />
-    
-  </figure>
-</em></p>
+<p>
+    <figure>
+      <img class="my-0 rounded-md" loading="lazy" src="images/Flocking%20Behavior.gif" alt="Flocking Behavior" />
+      
+    </figure>
+</p>
 </blockquote>
 <hr>
 
@@ -1019,6 +1129,636 @@
 </h3>
 <p>To streamline testing, I integrated sliders and buttons via OpenFrameworks GUI for real-time adjustments of parameters like max speed, acceleration, and drag.</p>
 <hr>
+
+
+<h2 class="relative group">🧭 Pathfinding Algorithms: Dijkstra &amp; A* in Action 
+    <div id="-pathfinding-algorithms-dijkstra--a-in-action" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#-pathfinding-algorithms-dijkstra--a-in-action" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>Beyond movement behaviors, efficient navigation is key. I implemented <strong>Dijkstra</strong> and <strong>A*</strong> algorithms across various graph types, optimizing data structures and heuristics for performance.</p>
+<hr>
+
+
+<h3 class="relative group">Graph Designs 
+    <div id="graph-designs" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#graph-designs" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+
+<h3 class="relative group">1️⃣ Meaningful Map 
+    <div id="1-meaningful-map" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#1-meaningful-map" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The first graph I developed represents a familiar environment—specifically, one of my favorite maps from the shooter game <strong>Valorant</strong>. This graph schematically outlines all possible routes from the defense spawn to the attack spawn, comprising <strong>38 nodes</strong> and <strong>53 edges</strong>.</p>
+<blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/2d-game--ai-engine/images/Valorant_hu17167491503809259786.png 330w,
+        /posts/2d-game--ai-engine/images/Valorant_hu7179277514816207228.png 660w,
+        /posts/2d-game--ai-engine/images/Valorant_hu17120258283445869120.png 1024w,
+        /posts/2d-game--ai-engine/images/Valorant_hu10207504011220786270.png 2x"
+        src="/posts/2d-game--ai-engine/images/Valorant_hu7179277514816207228.png"
+        alt="Valorant Map"
+      />
+      
+    </figure>
+</p>
+</blockquote>
+<p>To manage this data efficiently, I used a <strong>JSON parser library</strong>, allowing nodes and edges to be read from a single JSON file. Each edge is weighted by:</p>
+<p><code>weight = distance × coefficient</code></p>
+<p>The coefficient reflects the likelihood of encountering an opponent along the path—higher values indicate higher risk.</p>
+<blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/2d-game--ai-engine/images/1_hu5102971998807093779.png 330w,
+        /posts/2d-game--ai-engine/images/1_hu4835423129845192559.png 660w,
+        /posts/2d-game--ai-engine/images/1_hu16322810264789104555.png 1024w,
+        /posts/2d-game--ai-engine/images/1_hu1558295756082039075.png 2x"
+        src="/posts/2d-game--ai-engine/images/1_hu4835423129845192559.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/2d-game--ai-engine/images/2_hu5379313942528175498.png 330w,
+        /posts/2d-game--ai-engine/images/2_hu12144567851390004439.png 660w,
+        /posts/2d-game--ai-engine/images/2_hu3667090084671518954.png 1024w,
+        /posts/2d-game--ai-engine/images/2_hu9286071730978602663.png 2x"
+        src="/posts/2d-game--ai-engine/images/2_hu12144567851390004439.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+</blockquote>
+<hr>
+
+
+<h3 class="relative group">2️⃣ Very Big™ Graph 
+    <div id="2-very-big-graph" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#2-very-big-graph" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The second graph is a <strong>large-scale</strong>, randomly generated structure aimed at testing algorithm performance under heavy load. It contains <strong>2000 nodes</strong>, adhering to these generation rules:</p>
+<ul>
+<li>Nodes are randomly placed with a <strong>minimum spacing</strong>.</li>
+<li>Each node connects to nearby neighbors, max <strong>5 outgoing connections</strong>.</li>
+</ul>
+
+
+<h4 class="relative group">⚙️ Generation Algorithm: 
+    <div id="-generation-algorithm" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#-generation-algorithm" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ol>
+<li>Start at a central point.</li>
+<li>Generate new nodes based on random angles/distances.</li>
+<li>Ensure minimum spacing—retry if necessary.</li>
+<li>Connect nodes to nearest neighbors (up to 5).</li>
+</ol>
+
+
+<h4 class="relative group">🚨 Performance Optimization: 
+    <div id="-performance-optimization" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#-performance-optimization" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li><strong>Spatial Partitioning:</strong> The space is divided into cells based on minimum spacing, reducing distance check overhead.</li>
+<li><strong>Queue System:</strong> Nodes expand outward; if a node fails to generate new nodes after several attempts, it&rsquo;s dequeued.</li>
+</ul>
+<p>This approach ensures coherent structure while keeping runtime generation efficient.</p>
+<hr>
+<blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/2d-game--ai-engine/images/Big_hu18149366873407992407.png 330w,
+        /posts/2d-game--ai-engine/images/Big_hu17433172581863474950.png 660w,
+        /posts/2d-game--ai-engine/images/Big_hu14082508854199594034.png 1024w,
+        /posts/2d-game--ai-engine/images/Big_hu14160765485413913767.png 2x"
+        src="/posts/2d-game--ai-engine/images/Big_hu17433172581863474950.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+</blockquote>
+<hr>
+
+
+<h3 class="relative group">3️⃣ Indoor Environments with Obstacles 
+    <div id="3-indoor-environments-with-obstacles" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#3-indoor-environments-with-obstacles" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>This graph simulates indoor navigation using a <strong>tiled system</strong>, where nodes represent walkable areas and obstacles are defined in a text file using symbols:</p>
+<ul>
+<li><code>*</code> = Walkable Node</li>
+<li>Other symbols = Obstacles</li>
+</ul>
+<blockquote>
+<p>_
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/2d-game--ai-engine/images/Indoor1_hu1338159616656389764.png 330w,
+        /posts/2d-game--ai-engine/images/Indoor1_hu5004953150251144133.png 660w,
+        /posts/2d-game--ai-engine/images/Indoor1_hu7998372405131301008.png 1024w,
+        /posts/2d-game--ai-engine/images/Indoor1_hu4091634751321798888.png 2x"
+        src="/posts/2d-game--ai-engine/images/Indoor1_hu5004953150251144133.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+</blockquote>
+<p>Nodes are connected to immediate neighbors, with weights based on Euclidean distance. Nodes adjacent to obstacles are marked inaccessible to prevent collisions.</p>
+<blockquote>
+<p>_
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/2d-game--ai-engine/images/Indoor2_hu12944955659348730267.png 330w,
+        /posts/2d-game--ai-engine/images/Indoor2_hu4255364516405255191.png 660w,
+        /posts/2d-game--ai-engine/images/Indoor2_hu4728883415669923000.png 1024w,
+        /posts/2d-game--ai-engine/images/Indoor2_hu4799589209035280326.png 2x"
+        src="/posts/2d-game--ai-engine/images/Indoor2_hu4255364516405255191.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+</blockquote>
+<hr>
+
+
+<h2 class="relative group">⚡ Pathfinding Algorithm 
+    <div id="-pathfinding-algorithm" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#-pathfinding-algorithm" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">Open List Data Structure 
+    <div id="open-list-data-structure" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#open-list-data-structure" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>The <strong>Open List</strong> is critical for both Dijkstra and A*, supporting:</p>
+<ul>
+<li>Retrieval &amp; removal of the best node</li>
+<li>Membership checks</li>
+<li>Insertion</li>
+<li>Cost adjustments (Decrease Key)</li>
+</ul>
+<p>These operations are listed in order of their expected frequency of occurrence during the algorithm&rsquo;s execution. Below is an analysis of various data structures&rsquo; suitability for the <strong>Open List</strong>, focusing on their time complexity for each operation:</p>
+<ol>
+<li><strong>Unsorted Array:</strong></li>
+</ol>
+<ul>
+<li>
+<p><strong>Retrieval and removal of the best element, Membership check, and Adjustment of element values:</strong> Requires iterating through the entire array, resulting in a time complexity of O(N).</p>
+</li>
+<li>
+<p><strong>Insertion of new elements:</strong> Can be done in constant time, O(1), as it involves adding the element at the end of the array.</p>
+</li>
+</ul>
+<hr>
+<ol start="2">
+<li><strong>Sorted Array (By Key):</strong></li>
+</ol>
+<ul>
+<li>
+<p><strong>Membership check and Adjustment of element values:</strong> Can leverage binary search, leading to a time complexity of O(logN).</p>
+</li>
+<li>
+<p><strong>Retrieval and removal of the best element and Insertion of new elements:</strong> Due to the need to maintain the sorted order, these operations incur a time complexity of O(N) as they may require shifting elements.</p>
+</li>
+</ul>
+<hr>
+<ol start="3">
+<li><strong>Sorted Array (By Priority):</strong></li>
+</ol>
+<ul>
+<li>
+<p><strong>Retrieval of the best element:</strong> Is straightforward as the best element is always at the beginning, resulting in O(1) time complexity.</p>
+</li>
+<li>
+<p><strong>Membership check, Insertion of new elements, and Adjustment of element values:</strong> Require scanning the entire array, leading to a time complexity of O(N).</p>
+</li>
+</ul>
+<hr>
+<ol start="4">
+<li><strong>Hash Table:</strong></li>
+</ol>
+<ul>
+<li>
+<p><strong>Membership check, Insertion of new elements, and Adjustment of element values:</strong> Typically operate in constant time, O(1), due to the direct access nature of hash tables.</p>
+</li>
+<li>
+<p><strong>Retrieval and removal of the best element:</strong> Requires iterating over the entire table to identify the best element, resulting in O(N) time complexity.</p>
+</li>
+</ul>
+<hr>
+<ol start="5">
+<li><strong>Binary Heap:</strong></li>
+</ol>
+<ul>
+<li>
+<p><strong>Adding new elements, Retrieval and removal of the best element:</strong> Benefit from the heap&rsquo;s structure, allowing these operations to be performed in O(logN) time. Though Retrieval of the best element will only cost O(1), but after remove the element the whole heap must reconstruct itself.</p>
+</li>
+<li>
+<p><strong>Membership check:</strong> Is less efficient, requiring a full traversal of the heap, thus having a time complexity of O(N).</p>
+</li>
+</ul>
+<hr>
+
+
+<h4 class="relative group">⏱️ Data Structure Comparison 
+    <div id="-data-structure-comparison" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#-data-structure-comparison" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Data Structure</strong></th>
+          <th><strong>Retrieval &amp; Removal</strong></th>
+          <th><strong>Membership</strong></th>
+          <th><strong>Insertion</strong></th>
+          <th><strong>Adjustment (Decrease Key)</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Unsorted Array</td>
+          <td>O(N)</td>
+          <td>O(N)</td>
+          <td>O(1)</td>
+          <td>O(N)</td>
+      </tr>
+      <tr>
+          <td>Sorted Array (By Key)</td>
+          <td>O(N)</td>
+          <td>O(logN)</td>
+          <td>O(N)</td>
+          <td>O(logN)</td>
+      </tr>
+      <tr>
+          <td>Sorted Array (Priority)</td>
+          <td>O(1)</td>
+          <td>O(N)</td>
+          <td>O(N)</td>
+          <td>O(N)</td>
+      </tr>
+      <tr>
+          <td>Hash Table</td>
+          <td>O(N)</td>
+          <td>O(1)</td>
+          <td>O(1)</td>
+          <td>O(1)</td>
+      </tr>
+      <tr>
+          <td>Binary Heap</td>
+          <td>O(logN)</td>
+          <td>O(N)</td>
+          <td>O(logN)</td>
+          <td>O(logN)</td>
+      </tr>
+  </tbody>
+</table>
+<p>Although <strong>binary heap</strong> (e.g., <code>std::priority_queue</code>) is efficient for retrieval, it lacks fast membership checks and element updates.</p>
+<hr>
+
+
+<h3 class="relative group">🛠️ Custom Hybrid Data Structure 
+    <div id="-custom-hybrid-data-structure" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#-custom-hybrid-data-structure" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>To overcome these limitations, I designed a structure combining:</p>
+<ul>
+<li>A <strong>Priority Queue</strong> for ordering nodes.</li>
+<li>A <strong>Hash Map</strong> for quick membership and cost tracking.</li>
+</ul>
+
+
+<h4 class="relative group">How It Works: 
+    <div id="how-it-works" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#how-it-works" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>On insertion, check the hash map for existing nodes with higher costs.</li>
+<li>When popping, validate the node against the hash map.</li>
+<li>Outdated nodes are lazily discarded.</li>
+</ul>
+<p>This ensures efficient retrieval, insertion, and cost management without needing direct priority adjustments.</p>
+<hr>
+
+
+<h2 class="relative group">🎯 Heuristics 
+    <div id="-heuristics" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#-heuristics" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">📏 Euclidean Heuristic 
+    <div id="-euclidean-heuristic" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#-euclidean-heuristic" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>Uses straight-line distance.</li>
+<li><strong>Admissible</strong> and <strong>consistent</strong> in both weighted graphs and grid-based layouts.</li>
+<li>Perfect for scenarios where edge weights correlate with distance.</li>
+</ul>
+<hr>
+
+
+<h3 class="relative group">📐 Squared Distance Heuristic 
+    <div id="-squared-distance-heuristic" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#-squared-distance-heuristic" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>
+<p>Uses squared Euclidean distance: heuristic = dx² + dy²</p>
+</li>
+<li>
+<p><strong>Not admissible</strong>—it overestimates costs.</p>
+</li>
+<li>
+<p>Leads to faster computation but risks invalid paths due to inconsistency.</p>
+</li>
+</ul>
+<hr>
+
+
+<h2 class="relative group">📊 Algorithm Analysis 
+    <div id="-algorithm-analysis" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#-algorithm-analysis" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+
+
+<h3 class="relative group">Performance on Very Big™ Graph 
+    <div id="performance-on-very-big-graph" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#performance-on-very-big-graph" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<p>Starting from the center:</p>
+<ul>
+<li><strong>Dijkstra:</strong> Explores uniformly outward, forming a circular search pattern.</li>
+<li><strong>A*:</strong> Focused search guided by heuristics, reducing unnecessary node expansions.</li>
+</ul>
+<blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/2d-game--ai-engine/images/graph1_hu3648214675797818859.png 330w,
+        /posts/2d-game--ai-engine/images/graph1_hu12417640578606096300.png 660w,
+        /posts/2d-game--ai-engine/images/graph1_hu15261987353378515213.png 1024w,
+        /posts/2d-game--ai-engine/images/graph1_hu1126256232198485430.png 2x"
+        src="/posts/2d-game--ai-engine/images/graph1_hu12417640578606096300.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/2d-game--ai-engine/images/graph2_hu6293472510572892531.png 330w,
+        /posts/2d-game--ai-engine/images/graph2_hu586660711522259975.png 660w,
+        /posts/2d-game--ai-engine/images/graph2_hu6639121750002908216.png 1024w,
+        /posts/2d-game--ai-engine/images/graph2_hu8502333222506372516.png 2x"
+        src="/posts/2d-game--ai-engine/images/graph2_hu586660711522259975.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+</blockquote>
+<hr>
+
+
+<h3 class="relative group">Heuristic Impact on A* 
+    <div id="heuristic-impact-on-a" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#heuristic-impact-on-a" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+
+
+<h4 class="relative group">Overestimating Heuristic: 
+    <div id="overestimating-heuristic" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#overestimating-heuristic" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>Reduces nodes explored.</li>
+<li>Faster execution.</li>
+<li>May skip optimal paths.</li>
+</ul>
+
+
+<h4 class="relative group">Underestimating Heuristic: 
+    <div id="underestimating-heuristic" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#underestimating-heuristic" aria-label="Anchor">#</a>
+    </span>        
+    
+</h4>
+<ul>
+<li>Explores more nodes.</li>
+<li>Guarantees shortest path.</li>
+<li>Higher computational cost.</li>
+</ul>
+<blockquote>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/2d-game--ai-engine/images/heuristic1_hu17097437011476866708.png 330w,
+        /posts/2d-game--ai-engine/images/heuristic1_hu10015203515761355908.png 660w,
+        /posts/2d-game--ai-engine/images/heuristic1_hu11464881834737606229.png 1024w,
+        /posts/2d-game--ai-engine/images/heuristic1_hu12886486461338893149.png 2x"
+        src="/posts/2d-game--ai-engine/images/heuristic1_hu10015203515761355908.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+<p>
+    <figure>
+      <img
+        class="my-0 rounded-md"
+        loading="lazy"
+        srcset="
+        /posts/2d-game--ai-engine/images/heuristic2_hu6073468170970409105.png 330w,
+        /posts/2d-game--ai-engine/images/heuristic2_hu13708708404081483731.png 660w,
+        /posts/2d-game--ai-engine/images/heuristic2_hu1697909576626560635.png 1024w,
+        /posts/2d-game--ai-engine/images/heuristic2_hu642019904231118947.png 2x"
+        src="/posts/2d-game--ai-engine/images/heuristic2_hu13708708404081483731.png"
+        alt=""
+      />
+      
+    </figure>
+</p>
+</blockquote>
+<hr>
+
+
+<h2 class="relative group">📝 Conclusion 
+    <div id="-conclusion" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#-conclusion" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>In this project, I explored both classic and advanced aspects of pathfinding:</p>
+<ul>
+<li>Implemented <strong>Dijkstra</strong> and <strong>A*</strong> across diverse graph types.</li>
+<li>Designed a <strong>custom data structure</strong> to optimize Open List operations.</li>
+<li>Analyzed heuristic strategies to balance speed vs accuracy.</li>
+</ul>
+<p>This comprehensive study sharpened my understanding of algorithm efficiency, data structure design, and practical AI navigation challenges in both game-like and abstract environments.</p>
 <hr>
 
           
