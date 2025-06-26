@@ -4,7 +4,7 @@ summary: "A custom memory allocator system in C++"
 categories: ["Post","Blog",]
 tags: ["post","C++"]
 showSummary: true
-date: 2022-09-04
+date: 2024-01-01
 draft: false
 ---
 

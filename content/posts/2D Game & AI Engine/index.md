@@ -5,7 +5,7 @@ categories: ["Post","Blog",]
 tags: ["post","AI","Pathfinding"]
 #externalUrl: ""
 #showSummary: true
-date: 2024-01-04
+date: 2024-09-01
 draft: false
 ---
 
