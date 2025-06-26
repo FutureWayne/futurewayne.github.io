@@ -8,14 +8,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   
-  <title>Developing Smarter AI: Steering Behaviors and Pathfinding Algorithms &middot; Lai (Wayne) Wei</title>
-  <meta name="title" content="Developing Smarter AI: Steering Behaviors and Pathfinding Algorithms &middot; Lai (Wayne) Wei" />
+  <title>Custom Memory Allocator &middot; Lai (Wayne) Wei</title>
+  <meta name="title" content="Custom Memory Allocator &middot; Lai (Wayne) Wei" />
   
-  <meta name="description" content="In this blog, I’ll walk through my journey of developing AI behaviors, focusing on dynamic steering systems and efficient pathfinding algorithms. From crafting lifelike boid movements to optimizing search strategies in complex environments, this project deepened my understanding of both kinematic motion and algorithmic problem-solving.." />
-  <meta name="keywords" content="post, AI, Pathfinding, " />
+  <meta name="description" content="A custom memory allocator system in C&#43;&#43;" />
+  <meta name="keywords" content="post, C&#43;&#43;, " />
   
   
-  <link rel="canonical" href="http://localhost:1313/posts/2d-game--ai-engine/" />
+  <link rel="canonical" href="http://localhost:1313/posts/memory-allocator/" />
   
   
   
@@ -67,25 +67,24 @@
   
   
   
-  <meta property="og:url" content="http://localhost:1313/posts/2d-game--ai-engine/">
+  <meta property="og:url" content="http://localhost:1313/posts/memory-allocator/">
   <meta property="og:site_name" content="Lai (Wayne) Wei">
-  <meta property="og:title" content="Developing Smarter AI: Steering Behaviors and Pathfinding Algorithms">
-  <meta property="og:description" content="In this blog, I’ll walk through my journey of developing AI behaviors, focusing on dynamic steering systems and efficient pathfinding algorithms. From crafting lifelike boid movements to optimizing search strategies in complex environments, this project deepened my understanding of both kinematic motion and algorithmic problem-solving..">
+  <meta property="og:title" content="Custom Memory Allocator">
+  <meta property="og:description" content="A custom memory allocator system in C&#43;&#43;">
   <meta property="og:locale" content="en">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2024-01-04T00:00:00+00:00">
-    <meta property="article:modified_time" content="2024-01-04T00:00:00+00:00">
+    <meta property="article:published_time" content="2022-09-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2022-09-04T00:00:00+00:00">
     <meta property="article:tag" content="Post">
-    <meta property="article:tag" content="AI">
-    <meta property="article:tag" content="Pathfinding">
-    <meta property="og:image" content="http://localhost:1313/posts/2d-game--ai-engine/cover.png">
+    <meta property="article:tag" content="C&#43;&#43;">
+    <meta property="og:image" content="http://localhost:1313/posts/memory-allocator/cover.png">
 
   
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="http://localhost:1313/posts/2d-game--ai-engine/cover.png">
-  <meta name="twitter:title" content="Developing Smarter AI: Steering Behaviors and Pathfinding Algorithms">
-  <meta name="twitter:description" content="In this blog, I’ll walk through my journey of developing AI behaviors, focusing on dynamic steering systems and efficient pathfinding algorithms. From crafting lifelike boid movements to optimizing search strategies in complex environments, this project deepened my understanding of both kinematic motion and algorithmic problem-solving..">
+  <meta name="twitter:image" content="http://localhost:1313/posts/memory-allocator/cover.png">
+  <meta name="twitter:title" content="Custom Memory Allocator">
+  <meta name="twitter:description" content="A custom memory allocator system in C&#43;&#43;">
 
   
   <script type="application/ld+json">
@@ -93,26 +92,26 @@
     "@context": "https://schema.org",
     "@type": "Article",
     "articleSection": "Posts",
-    "name": "Developing Smarter AI: Steering Behaviors and Pathfinding Algorithms",
-    "headline": "Developing Smarter AI: Steering Behaviors and Pathfinding Algorithms",
+    "name": "Custom Memory Allocator",
+    "headline": "Custom Memory Allocator",
     
-    "abstract": "In this blog, I’ll walk through my journey of developing AI behaviors, focusing on dynamic steering systems and efficient pathfinding algorithms. From crafting lifelike boid movements to optimizing search strategies in complex environments, this project deepened my understanding of both kinematic motion and algorithmic problem-solving..",
+    "abstract": "A custom memory allocator system in C\u002b\u002b",
     "inLanguage": "en",
-    "url" : "http:\/\/localhost:1313\/posts\/2d-game--ai-engine\/",
+    "url" : "http:\/\/localhost:1313\/posts\/memory-allocator\/",
     "author" : {
       "@type": "Person",
       "name": "Lai (Wayne) Wei"
     },
-    "copyrightYear": "2024",
-    "dateCreated": "2024-01-04T00:00:00\u002b00:00",
-    "datePublished": "2024-01-04T00:00:00\u002b00:00",
+    "copyrightYear": "2022",
+    "dateCreated": "2022-09-04T00:00:00\u002b00:00",
+    "datePublished": "2022-09-04T00:00:00\u002b00:00",
     
-    "dateModified": "2024-01-04T00:00:00\u002b00:00",
+    "dateModified": "2022-09-04T00:00:00\u002b00:00",
     
-    "keywords": ["post","AI","Pathfinding"],
+    "keywords": ["post","C++"],
     
     "mainEntityOfPage": "true",
-    "wordCount": "1237"
+    "wordCount": "1956"
   }]
   </script>
 
@@ -476,7 +475,7 @@
 
     
     <div class="fixed inset-x-0 top-0 h-[800px] single_hero_background nozoom"
-    style="background-image:url(/posts/2d-game--ai-engine/cover_hu11164739567521921261.png);">
+    style="background-image:url(/posts/memory-allocator/cover_hu17906296856267456453.png);">
     
 
 
@@ -529,8 +528,8 @@
   <li class="hidden">
     <a
       class="hover:underline decoration-neutral-300 dark:underline-neutral-600"
-      href="/posts/2d-game--ai-engine/"
-      >Developing Smarter AI: Steering Behaviors and Pathfinding Algorithms</a
+      href="/posts/memory-allocator/"
+      >Custom Memory Allocator</a
     ><span class="px-1 text-primary-500">/</span>
   </li>
 
@@ -539,7 +538,7 @@
 
     
     <h1 class="mt-0 text-4xl font-extrabold text-neutral-900 dark:text-neutral">
-      Developing Smarter AI: Steering Behaviors and Pathfinding Algorithms
+      Custom Memory Allocator
     </h1>
     <div class="mt-1 mb-6 text-base text-neutral-500 dark:text-neutral-400 print:hidden">
       
@@ -584,7 +583,7 @@
 <div class="flex flex-row flex-wrap items-center">
   
   
-  <time datetime="2024-01-04T00:00:00&#43;00:00">4 January 2024</time><span class="px-2 text-primary-500">&middot;</span><span>1237 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">6 mins</span>
+  <time datetime="2022-09-04T00:00:00&#43;00:00">4 September 2022</time><span class="px-2 text-primary-500">&middot;</span><span>1956 words</span><span class="px-2 text-primary-500">&middot;</span><span title="Reading time">10 mins</span>
   
 
   
@@ -728,66 +727,38 @@
     class="min-w-[220px] py-2 border-dotted ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#-dynamic-steering-kinematic-motion-for-ai">🏎️ Dynamic Steering: Kinematic Motion for AI</a>
+    <li><a href="#project-overview">Project Overview</a></li>
+    <li><a href="#technical-architecture">Technical Architecture</a>
       <ul>
-        <li><a href="#kinematic-behavior">Kinematic Behavior</a></li>
-        <li><a href="#seek-behavior">Seek Behavior</a></li>
-        <li><a href="#arrive-behavior-two-approaches">Arrive Behavior: Two Approaches</a>
-          <ul>
-            <li><a href="#1-velocity-matching-approach">1. <strong>Velocity Matching Approach</strong></a></li>
-            <li><a href="#2-physics-based-approach">2. <strong>Physics-Based Approach</strong></a></li>
-          </ul>
-        </li>
-        <li><a href="#wandering-behavior">Wandering Behavior</a></li>
-        <li><a href="#flocking-behavior">Flocking Behavior</a></li>
-        <li><a href="#tuning-with-openframeworks-gui">Tuning with OpenFrameworks GUI</a></li>
+        <li><a href="#overview">Overview</a></li>
       </ul>
     </li>
-    <li><a href="#-pathfinding-algorithms-dijkstra--a-in-action">🧭 Pathfinding Algorithms: Dijkstra &amp; A* in Action</a>
+    <li><a href="#fixedsizeallocator">FixedSizeAllocator</a>
       <ul>
-        <li><a href="#graph-designs">Graph Designs</a></li>
-        <li><a href="#1-meaningful-map">1️⃣ Meaningful Map</a></li>
-        <li><a href="#2-very-big-graph">2️⃣ Very Big™ Graph</a>
-          <ul>
-            <li><a href="#-generation-algorithm">⚙️ Generation Algorithm:</a></li>
-            <li><a href="#-performance-optimization">🚨 Performance Optimization:</a></li>
-          </ul>
-        </li>
-        <li><a href="#3-indoor-environments-with-obstacles">3️⃣ Indoor Environments with Obstacles</a></li>
+        <li><a href="#key-characteristics">Key Characteristics</a></li>
       </ul>
     </li>
-    <li><a href="#-pathfinding-algorithm">⚡ Pathfinding Algorithm</a>
+    <li><a href="#heapmanager">HeapManager</a>
       <ul>
-        <li><a href="#open-list-data-structure">Open List Data Structure</a>
-          <ul>
-            <li><a href="#-data-structure-comparison">⏱️ Data Structure Comparison</a></li>
-          </ul>
-        </li>
-        <li><a href="#-custom-hybrid-data-structure">🛠️ Custom Hybrid Data Structure</a>
-          <ul>
-            <li><a href="#how-it-works">How It Works:</a></li>
-          </ul>
-        </li>
+        <li><a href="#key-aspects">Key Aspects</a></li>
       </ul>
     </li>
-    <li><a href="#-heuristics">🎯 Heuristics</a>
+    <li><a href="#code-highlights">Code Highlights</a>
       <ul>
-        <li><a href="#-euclidean-heuristic">📏 Euclidean Heuristic</a></li>
-        <li><a href="#-squared-distance-heuristic">📐 Squared Distance Heuristic</a></li>
+        <li><a href="#noteworthy-techniques">Noteworthy Techniques</a></li>
       </ul>
     </li>
-    <li><a href="#-algorithm-analysis">📊 Algorithm Analysis</a>
+    <li><a href="#usage-instructions">Usage Instructions</a>
       <ul>
-        <li><a href="#performance-on-very-big-graph">Performance on Very Big™ Graph</a></li>
-        <li><a href="#heuristic-impact-on-a">Heuristic Impact on A*</a>
-          <ul>
-            <li><a href="#overestimating-heuristic">Overestimating Heuristic:</a></li>
-            <li><a href="#underestimating-heuristic">Underestimating Heuristic:</a></li>
-          </ul>
-        </li>
+        <li><a href="#build-the-project">Build the Project</a></li>
+        <li><a href="#initialize-memory-system">Initialize Memory System</a></li>
+        <li><a href="#allocate-memory">Allocate Memory</a></li>
+        <li><a href="#free-memory">Free Memory</a></li>
+        <li><a href="#shutdown">Shutdown</a></li>
+        <li><a href="#run--test">Run &amp; Test</a></li>
       </ul>
     </li>
-    <li><a href="#-conclusion">📝 Conclusion</a></li>
+    <li><a href="#potential-extensions">Potential Extensions</a></li>
   </ul>
 </nav>
   </div>
@@ -801,66 +772,38 @@
     class="py-2 border-dotted border-neutral-300 ltr:-ml-5 ltr:border-l ltr:pl-5 rtl:-mr-5 rtl:border-r rtl:pr-5 dark:border-neutral-600">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#-dynamic-steering-kinematic-motion-for-ai">🏎️ Dynamic Steering: Kinematic Motion for AI</a>
+    <li><a href="#project-overview">Project Overview</a></li>
+    <li><a href="#technical-architecture">Technical Architecture</a>
       <ul>
-        <li><a href="#kinematic-behavior">Kinematic Behavior</a></li>
-        <li><a href="#seek-behavior">Seek Behavior</a></li>
-        <li><a href="#arrive-behavior-two-approaches">Arrive Behavior: Two Approaches</a>
-          <ul>
-            <li><a href="#1-velocity-matching-approach">1. <strong>Velocity Matching Approach</strong></a></li>
-            <li><a href="#2-physics-based-approach">2. <strong>Physics-Based Approach</strong></a></li>
-          </ul>
-        </li>
-        <li><a href="#wandering-behavior">Wandering Behavior</a></li>
-        <li><a href="#flocking-behavior">Flocking Behavior</a></li>
-        <li><a href="#tuning-with-openframeworks-gui">Tuning with OpenFrameworks GUI</a></li>
+        <li><a href="#overview">Overview</a></li>
       </ul>
     </li>
-    <li><a href="#-pathfinding-algorithms-dijkstra--a-in-action">🧭 Pathfinding Algorithms: Dijkstra &amp; A* in Action</a>
+    <li><a href="#fixedsizeallocator">FixedSizeAllocator</a>
       <ul>
-        <li><a href="#graph-designs">Graph Designs</a></li>
-        <li><a href="#1-meaningful-map">1️⃣ Meaningful Map</a></li>
-        <li><a href="#2-very-big-graph">2️⃣ Very Big™ Graph</a>
-          <ul>
-            <li><a href="#-generation-algorithm">⚙️ Generation Algorithm:</a></li>
-            <li><a href="#-performance-optimization">🚨 Performance Optimization:</a></li>
-          </ul>
-        </li>
-        <li><a href="#3-indoor-environments-with-obstacles">3️⃣ Indoor Environments with Obstacles</a></li>
+        <li><a href="#key-characteristics">Key Characteristics</a></li>
       </ul>
     </li>
-    <li><a href="#-pathfinding-algorithm">⚡ Pathfinding Algorithm</a>
+    <li><a href="#heapmanager">HeapManager</a>
       <ul>
-        <li><a href="#open-list-data-structure">Open List Data Structure</a>
-          <ul>
-            <li><a href="#-data-structure-comparison">⏱️ Data Structure Comparison</a></li>
-          </ul>
-        </li>
-        <li><a href="#-custom-hybrid-data-structure">🛠️ Custom Hybrid Data Structure</a>
-          <ul>
-            <li><a href="#how-it-works">How It Works:</a></li>
-          </ul>
-        </li>
+        <li><a href="#key-aspects">Key Aspects</a></li>
       </ul>
     </li>
-    <li><a href="#-heuristics">🎯 Heuristics</a>
+    <li><a href="#code-highlights">Code Highlights</a>
       <ul>
-        <li><a href="#-euclidean-heuristic">📏 Euclidean Heuristic</a></li>
-        <li><a href="#-squared-distance-heuristic">📐 Squared Distance Heuristic</a></li>
+        <li><a href="#noteworthy-techniques">Noteworthy Techniques</a></li>
       </ul>
     </li>
-    <li><a href="#-algorithm-analysis">📊 Algorithm Analysis</a>
+    <li><a href="#usage-instructions">Usage Instructions</a>
       <ul>
-        <li><a href="#performance-on-very-big-graph">Performance on Very Big™ Graph</a></li>
-        <li><a href="#heuristic-impact-on-a">Heuristic Impact on A*</a>
-          <ul>
-            <li><a href="#overestimating-heuristic">Overestimating Heuristic:</a></li>
-            <li><a href="#underestimating-heuristic">Underestimating Heuristic:</a></li>
-          </ul>
-        </li>
+        <li><a href="#build-the-project">Build the Project</a></li>
+        <li><a href="#initialize-memory-system">Initialize Memory System</a></li>
+        <li><a href="#allocate-memory">Allocate Memory</a></li>
+        <li><a href="#free-memory">Free Memory</a></li>
+        <li><a href="#shutdown">Shutdown</a></li>
+        <li><a href="#run--test">Run &amp; Test</a></li>
       </ul>
     </li>
-    <li><a href="#-conclusion">📝 Conclusion</a></li>
+    <li><a href="#potential-extensions">Potential Extensions</a></li>
   </ul>
 </nav>
   </div>
@@ -904,861 +847,370 @@
 
 
         <div class="article-content max-w-prose mb-20">
-          <hr>
+          
 
-
-<h2 class="relative group">🏎️ Dynamic Steering: Kinematic Motion for AI 
-    <div id="-dynamic-steering-kinematic-motion-for-ai" class="anchor"></div>
+<h1 class="relative group">Custom Memory Allocator 
+    <div id="custom-memory-allocator" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-dynamic-steering-kinematic-motion-for-ai" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#custom-memory-allocator" aria-label="Anchor">#</a>
+    </span>        
+    
+</h1>
+
+
+<h2 class="relative group">Project Overview 
+    <div id="project-overview" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#project-overview" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>Creating believable AI movement requires more than just moving from point A to B. I implemented several steering behaviors inspired by boid algorithms, focusing on flexibility and realism.</p>
-
-
-<h3 class="relative group">Kinematic Behavior 
-    <div id="kinematic-behavior" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#kinematic-behavior" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>The AI (boid) changes its velocity and orientation instantly.</p>
-<blockquote>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/2d-game--ai-engine/images/Kinematic_hu9834330421542973900.gif 330w,
-        /posts/2d-game--ai-engine/images/Kinematic_hu16059506882112601607.gif 660w,
-        /posts/2d-game--ai-engine/images/Kinematic_hu13146784899688671545.gif 1024w,
-        /posts/2d-game--ai-engine/images/Kinematic_hu3485727005700178598.gif 2x"
-        src="/posts/2d-game--ai-engine/images/Kinematic_hu16059506882112601607.gif"
-        alt=""
-      />
-      
-    </figure>
-</p>
-</blockquote>
-<hr>
-
-
-<h3 class="relative group">Seek Behavior 
-    <div id="seek-behavior" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#seek-behavior" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>The <code>Seek</code> function drives AI (boids) directly towards a target using maximum force. Without proper drag handling, this can cause overshooting and spiraling effects.</p>
-<blockquote>
-<p>
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="images/Seek%20Behavior.gif" alt="Seek Behavior" />
-      
-    </figure>
-</p>
-</blockquote>
-<hr>
-
-
-<h3 class="relative group">Arrive Behavior: Two Approaches 
-    <div id="arrive-behavior-two-approaches" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#arrive-behavior-two-approaches" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>I explored two distinct methods to refine how AI arrives smoothly at a target:</p>
-
-
-<h4 class="relative group">1. <strong>Velocity Matching Approach</strong> 
-    <div id="1-velocity-matching-approach" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#1-velocity-matching-approach" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
+<p>This project is a custom memory allocator system in C++, designed for efficient memory management in performance-critical applications like video games. It replaces the default <code>new/delete</code> with a tailored allocator that minimizes fragmentation and improves allocation speed. The allocator consists of two core components:</p>
 <ul>
-<li>Defines max speed, slow radius, and arrival radius.</li>
-<li>Smooth deceleration as AI nears the target by interpolating velocity.</li>
+<li><strong>FixedSizeAllocator</strong> for small, fixed-size allocations</li>
+<li><strong>HeapManager</strong> for general dynamic allocations</li>
 </ul>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Smooth transitions.</li>
-<li>Drag-independent.</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Fixed slow radius limits flexibility.</li>
-<li>Potential inefficiency in certain scenarios.</li>
-</ul>
-<blockquote>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/2d-game--ai-engine/images/Velocity_hu2007131608412343253.gif 330w,
-        /posts/2d-game--ai-engine/images/Velocity_hu2362578583078876120.gif 660w,
-        /posts/2d-game--ai-engine/images/Velocity_hu9610388613159269154.gif 1024w,
-        /posts/2d-game--ai-engine/images/Velocity_hu16132947358080671661.gif 2x"
-        src="/posts/2d-game--ai-engine/images/Velocity_hu2362578583078876120.gif"
-        alt=""
-      />
-      
-    </figure>
-</p>
-</blockquote>
+<p>By handling memory in a game-specific way (e.g. pooling small objects, aligning data), this system helps gameplay programmers manage resources more predictably and efficiently than the standard heap. It demonstrates low-level memory management skills that are highly relevant for gameplay programming.</p>
 <hr>
 
 
-<h4 class="relative group">2. <strong>Physics-Based Approach</strong> 
-    <div id="2-physics-based-approach" class="anchor"></div>
+<h2 class="relative group">Technical Architecture 
+    <div id="technical-architecture" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#2-physics-based-approach" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-<ul>
-<li>Focuses on acceleration and deceleration using physics principles.</li>
-<li>Calculates braking distance dynamically.</li>
-</ul>
-<p><strong>Pros:</strong></p>
-<ul>
-<li>Adaptive to different rigidbody settings.</li>
-<li>Maximizes efficiency with constant max acceleration/deceleration.</li>
-</ul>
-<p><strong>Cons:</strong></p>
-<ul>
-<li>Requires careful drag handling.</li>
-<li>More edge cases to manage.</li>
-</ul>
-<blockquote>
-<p>
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="images/Physics-Based%20Approach.gif" alt="Physics-Based Approach" />
-      
-    </figure>
-</p>
-</blockquote>
-<hr>
-
-
-<h3 class="relative group">Wandering Behavior 
-    <div id="wandering-behavior" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#wandering-behavior" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Implemented using a &ldquo;wander circle&rdquo; and random binomial targeting, with both velocity matching and physics-based orientation control for smooth rotation.</p>
-<blockquote>
-<p>
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="images/Wandering%20Behavior.gif" alt="Wandering Behavior" />
-      
-    </figure>
-</p>
-</blockquote>
-<hr>
-
-
-<h3 class="relative group">Flocking Behavior 
-    <div id="flocking-behavior" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#flocking-behavior" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>Classic flocking combines:</p>
-<ol>
-<li>Cohesion</li>
-<li>Alignment</li>
-<li>Separation</li>
-</ol>
-<p>I optimized this by delegating flocking to a <code>Seek</code> behavior towards a calculated position. Additionally, I introduced a <strong>leader-following system</strong> to maintain group coherence.</p>
-<blockquote>
-<p>
-    <figure>
-      <img class="my-0 rounded-md" loading="lazy" src="images/Flocking%20Behavior.gif" alt="Flocking Behavior" />
-      
-    </figure>
-</p>
-</blockquote>
-<hr>
-
-
-<h3 class="relative group">Tuning with OpenFrameworks GUI 
-    <div id="tuning-with-openframeworks-gui" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#tuning-with-openframeworks-gui" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>To streamline testing, I integrated sliders and buttons via OpenFrameworks GUI for real-time adjustments of parameters like max speed, acceleration, and drag.</p>
-<hr>
-
-
-<h2 class="relative group">🧭 Pathfinding Algorithms: Dijkstra &amp; A* in Action 
-    <div id="-pathfinding-algorithms-dijkstra--a-in-action" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-pathfinding-algorithms-dijkstra--a-in-action" aria-label="Anchor">#</a>
-    </span>        
-    
-</h2>
-<p>Beyond movement behaviors, efficient navigation is key. I implemented <strong>Dijkstra</strong> and <strong>A*</strong> algorithms across various graph types, optimizing data structures and heuristics for performance.</p>
-<hr>
-
-
-<h3 class="relative group">Graph Designs 
-    <div id="graph-designs" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#graph-designs" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-
-
-<h3 class="relative group">1️⃣ Meaningful Map 
-    <div id="1-meaningful-map" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#1-meaningful-map" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>The first graph I developed represents a familiar environment—specifically, one of my favorite maps from the shooter game <strong>Valorant</strong>. This graph schematically outlines all possible routes from the defense spawn to the attack spawn, comprising <strong>38 nodes</strong> and <strong>53 edges</strong>.</p>
-<blockquote>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/2d-game--ai-engine/images/Valorant_hu17167491503809259786.png 330w,
-        /posts/2d-game--ai-engine/images/Valorant_hu7179277514816207228.png 660w,
-        /posts/2d-game--ai-engine/images/Valorant_hu17120258283445869120.png 1024w,
-        /posts/2d-game--ai-engine/images/Valorant_hu10207504011220786270.png 2x"
-        src="/posts/2d-game--ai-engine/images/Valorant_hu7179277514816207228.png"
-        alt="Valorant Map"
-      />
-      
-    </figure>
-</p>
-</blockquote>
-<p>To manage this data efficiently, I used a <strong>JSON parser library</strong>, allowing nodes and edges to be read from a single JSON file. Each edge is weighted by:</p>
-<p><code>weight = distance × coefficient</code></p>
-<p>The coefficient reflects the likelihood of encountering an opponent along the path—higher values indicate higher risk.</p>
-<blockquote>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/2d-game--ai-engine/images/1_hu5102971998807093779.png 330w,
-        /posts/2d-game--ai-engine/images/1_hu4835423129845192559.png 660w,
-        /posts/2d-game--ai-engine/images/1_hu16322810264789104555.png 1024w,
-        /posts/2d-game--ai-engine/images/1_hu1558295756082039075.png 2x"
-        src="/posts/2d-game--ai-engine/images/1_hu4835423129845192559.png"
-        alt=""
-      />
-      
-    </figure>
-</p>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/2d-game--ai-engine/images/2_hu5379313942528175498.png 330w,
-        /posts/2d-game--ai-engine/images/2_hu12144567851390004439.png 660w,
-        /posts/2d-game--ai-engine/images/2_hu3667090084671518954.png 1024w,
-        /posts/2d-game--ai-engine/images/2_hu9286071730978602663.png 2x"
-        src="/posts/2d-game--ai-engine/images/2_hu12144567851390004439.png"
-        alt=""
-      />
-      
-    </figure>
-</p>
-</blockquote>
-<hr>
-
-
-<h3 class="relative group">2️⃣ Very Big™ Graph 
-    <div id="2-very-big-graph" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#2-very-big-graph" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>The second graph is a <strong>large-scale</strong>, randomly generated structure aimed at testing algorithm performance under heavy load. It contains <strong>2000 nodes</strong>, adhering to these generation rules:</p>
-<ul>
-<li>Nodes are randomly placed with a <strong>minimum spacing</strong>.</li>
-<li>Each node connects to nearby neighbors, max <strong>5 outgoing connections</strong>.</li>
-</ul>
-
-
-<h4 class="relative group">⚙️ Generation Algorithm: 
-    <div id="-generation-algorithm" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-generation-algorithm" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-<ol>
-<li>Start at a central point.</li>
-<li>Generate new nodes based on random angles/distances.</li>
-<li>Ensure minimum spacing—retry if necessary.</li>
-<li>Connect nodes to nearest neighbors (up to 5).</li>
-</ol>
-
-
-<h4 class="relative group">🚨 Performance Optimization: 
-    <div id="-performance-optimization" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-performance-optimization" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-<ul>
-<li><strong>Spatial Partitioning:</strong> The space is divided into cells based on minimum spacing, reducing distance check overhead.</li>
-<li><strong>Queue System:</strong> Nodes expand outward; if a node fails to generate new nodes after several attempts, it&rsquo;s dequeued.</li>
-</ul>
-<p>This approach ensures coherent structure while keeping runtime generation efficient.</p>
-<hr>
-<blockquote>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/2d-game--ai-engine/images/Big_hu18149366873407992407.png 330w,
-        /posts/2d-game--ai-engine/images/Big_hu17433172581863474950.png 660w,
-        /posts/2d-game--ai-engine/images/Big_hu14082508854199594034.png 1024w,
-        /posts/2d-game--ai-engine/images/Big_hu14160765485413913767.png 2x"
-        src="/posts/2d-game--ai-engine/images/Big_hu17433172581863474950.png"
-        alt=""
-      />
-      
-    </figure>
-</p>
-</blockquote>
-<hr>
-
-
-<h3 class="relative group">3️⃣ Indoor Environments with Obstacles 
-    <div id="3-indoor-environments-with-obstacles" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#3-indoor-environments-with-obstacles" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<p>This graph simulates indoor navigation using a <strong>tiled system</strong>, where nodes represent walkable areas and obstacles are defined in a text file using symbols:</p>
-<ul>
-<li><code>*</code> = Walkable Node</li>
-<li>Other symbols = Obstacles</li>
-</ul>
-<blockquote>
-<p>_
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/2d-game--ai-engine/images/Indoor1_hu1338159616656389764.png 330w,
-        /posts/2d-game--ai-engine/images/Indoor1_hu5004953150251144133.png 660w,
-        /posts/2d-game--ai-engine/images/Indoor1_hu7998372405131301008.png 1024w,
-        /posts/2d-game--ai-engine/images/Indoor1_hu4091634751321798888.png 2x"
-        src="/posts/2d-game--ai-engine/images/Indoor1_hu5004953150251144133.png"
-        alt=""
-      />
-      
-    </figure>
-</p>
-</blockquote>
-<p>Nodes are connected to immediate neighbors, with weights based on Euclidean distance. Nodes adjacent to obstacles are marked inaccessible to prevent collisions.</p>
-<blockquote>
-<p>_
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/2d-game--ai-engine/images/Indoor2_hu12944955659348730267.png 330w,
-        /posts/2d-game--ai-engine/images/Indoor2_hu4255364516405255191.png 660w,
-        /posts/2d-game--ai-engine/images/Indoor2_hu4728883415669923000.png 1024w,
-        /posts/2d-game--ai-engine/images/Indoor2_hu4799589209035280326.png 2x"
-        src="/posts/2d-game--ai-engine/images/Indoor2_hu4255364516405255191.png"
-        alt=""
-      />
-      
-    </figure>
-</p>
-</blockquote>
-<hr>
-
-
-<h2 class="relative group">⚡ Pathfinding Algorithm 
-    <div id="-pathfinding-algorithm" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-pathfinding-algorithm" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#technical-architecture" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 
 
-<h3 class="relative group">Open List Data Structure 
-    <div id="open-list-data-structure" class="anchor"></div>
+<h3 class="relative group">Overview 
+    <div id="overview" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#open-list-data-structure" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#overview" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>The <strong>Open List</strong> is critical for both Dijkstra and A*, supporting:</p>
 <ul>
-<li>Retrieval &amp; removal of the best node</li>
-<li>Membership checks</li>
-<li>Insertion</li>
-<li>Cost adjustments (Decrease Key)</li>
+<li>Two-tier architecture: multiple fixed-size pools + general heap.</li>
+<li>A large contiguous memory buffer is initialized.</li>
+<li>FixedSizeAllocator instances are created for specific sizes (e.g. 16B, 32B, etc.).</li>
+<li>Remaining buffer space is managed by the HeapManager.</li>
+<li>Allocation routing:
+<ul>
+<li>Small/fixed-size → FixedSizeAllocator</li>
+<li>Others → HeapManager</li>
 </ul>
-<p>These operations are listed in order of their expected frequency of occurrence during the algorithm&rsquo;s execution. Below is an analysis of various data structures&rsquo; suitability for the <strong>Open List</strong>, focusing on their time complexity for each operation:</p>
-<ol>
-<li><strong>Unsorted Array:</strong></li>
-</ol>
-<ul>
-<li>
-<p><strong>Retrieval and removal of the best element, Membership check, and Adjustment of element values:</strong> Requires iterating through the entire array, resulting in a time complexity of O(N).</p>
-</li>
-<li>
-<p><strong>Insertion of new elements:</strong> Can be done in constant time, O(1), as it involves adding the element at the end of the array.</p>
 </li>
 </ul>
-<hr>
-<ol start="2">
-<li><strong>Sorted Array (By Key):</strong></li>
-</ol>
-<ul>
-<li>
-<p><strong>Membership check and Adjustment of element values:</strong> Can leverage binary search, leading to a time complexity of O(logN).</p>
-</li>
-<li>
-<p><strong>Retrieval and removal of the best element and Insertion of new elements:</strong> Due to the need to maintain the sorted order, these operations incur a time complexity of O(N) as they may require shifting elements.</p>
-</li>
-</ul>
-<hr>
-<ol start="3">
-<li><strong>Sorted Array (By Priority):</strong></li>
-</ol>
-<ul>
-<li>
-<p><strong>Retrieval of the best element:</strong> Is straightforward as the best element is always at the beginning, resulting in O(1) time complexity.</p>
-</li>
-<li>
-<p><strong>Membership check, Insertion of new elements, and Adjustment of element values:</strong> Require scanning the entire array, leading to a time complexity of O(N).</p>
-</li>
-</ul>
-<hr>
-<ol start="4">
-<li><strong>Hash Table:</strong></li>
-</ol>
-<ul>
-<li>
-<p><strong>Membership check, Insertion of new elements, and Adjustment of element values:</strong> Typically operate in constant time, O(1), due to the direct access nature of hash tables.</p>
-</li>
-<li>
-<p><strong>Retrieval and removal of the best element:</strong> Requires iterating over the entire table to identify the best element, resulting in O(N) time complexity.</p>
-</li>
-</ul>
-<hr>
-<ol start="5">
-<li><strong>Binary Heap:</strong></li>
-</ol>
-<ul>
-<li>
-<p><strong>Adding new elements, Retrieval and removal of the best element:</strong> Benefit from the heap&rsquo;s structure, allowing these operations to be performed in O(logN) time. Though Retrieval of the best element will only cost O(1), but after remove the element the whole heap must reconstruct itself.</p>
-</li>
-<li>
-<p><strong>Membership check:</strong> Is less efficient, requiring a full traversal of the heap, thus having a time complexity of O(N).</p>
-</li>
-</ul>
+<p>This ensures that frequent small allocations (like bullets, particles) are efficient and reduce heap fragmentation.</p>
 <hr>
 
 
-<h4 class="relative group">⏱️ Data Structure Comparison 
-    <div id="-data-structure-comparison" class="anchor"></div>
+<h2 class="relative group">FixedSizeAllocator 
+    <div id="fixedsizeallocator" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-data-structure-comparison" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#fixedsizeallocator" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
-<table>
-  <thead>
-      <tr>
-          <th><strong>Data Structure</strong></th>
-          <th><strong>Retrieval &amp; Removal</strong></th>
-          <th><strong>Membership</strong></th>
-          <th><strong>Insertion</strong></th>
-          <th><strong>Adjustment (Decrease Key)</strong></th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Unsorted Array</td>
-          <td>O(N)</td>
-          <td>O(N)</td>
-          <td>O(1)</td>
-          <td>O(N)</td>
-      </tr>
-      <tr>
-          <td>Sorted Array (By Key)</td>
-          <td>O(N)</td>
-          <td>O(logN)</td>
-          <td>O(N)</td>
-          <td>O(logN)</td>
-      </tr>
-      <tr>
-          <td>Sorted Array (Priority)</td>
-          <td>O(1)</td>
-          <td>O(N)</td>
-          <td>O(N)</td>
-          <td>O(N)</td>
-      </tr>
-      <tr>
-          <td>Hash Table</td>
-          <td>O(N)</td>
-          <td>O(1)</td>
-          <td>O(1)</td>
-          <td>O(1)</td>
-      </tr>
-      <tr>
-          <td>Binary Heap</td>
-          <td>O(logN)</td>
-          <td>O(N)</td>
-          <td>O(logN)</td>
-          <td>O(logN)</td>
-      </tr>
-  </tbody>
-</table>
-<p>Although <strong>binary heap</strong> (e.g., <code>std::priority_queue</code>) is efficient for retrieval, it lacks fast membership checks and element updates.</p>
-<hr>
+</h2>
+<p>The <strong>FixedSizeAllocator</strong> manages a pool of equal-size blocks and is optimized for fast allocation/deallocation of objects of the same size. Key characteristics of this component include:</p>
 
 
-<h3 class="relative group">🛠️ Custom Hybrid Data Structure 
-    <div id="-custom-hybrid-data-structure" class="anchor"></div>
+<h3 class="relative group">Key Characteristics 
+    <div id="key-characteristics" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-custom-hybrid-data-structure" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#key-characteristics" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>To overcome these limitations, I designed a structure combining:</p>
 <ul>
-<li>A <strong>Priority Queue</strong> for ordering nodes.</li>
-<li>A <strong>Hash Map</strong> for quick membership and cost tracking.</li>
+<li>
+<p><strong>BitArray for Tracking</strong>:<br>
+Each FixedSizeAllocator uses a compact bit array to track which blocks are free or in use. This allows O(1) checks and updates of allocation status by manipulating bits instead of heavier data structures. For example, setting a bit marks a block as occupied, and clearing it marks the block free. The bit array and related utility functions (like finding the first free bit) provide an efficient way to find available blocks without searching through complex lists.</p>
+</li>
+<li>
+<p><strong>Guardbands for Safety</strong>:<br>
+To catch buffer overruns, the allocator can insert <strong>guardband</strong> patterns around each allocated block. These are small canary values (e.g. <code>0xDEADBEEF</code>) placed before and after the block data in memory. In debug builds, the guardbands are enabled via a macro (<code>ENABLE_GUARDBANDS</code>) and are checked upon deallocation to detect any corruption (e.g. if a buffer overflow overwrote a guard value). In release builds, guardbands can be disabled to eliminate the overhead. This feature adds a layer of memory safety particularly useful during development and testing.</p>
+</li>
+<li>
+<p><strong>Constant-Time Allocation</strong>:<br>
+Allocating from a FixedSizeAllocator involves finding the first clear bit in the bit array (indicating a free block), marking it as used, and returning the block’s address. Internally, the allocator calculates the memory address as an offset in its pool using simple pointer arithmetic. Because block size is fixed, the index of a bit corresponds directly to a memory offset. This makes allocation and deallocation operations predictable and fast (iterating over bits or using bit-ops), ideal for gameplay scenarios where many small objects are created and destroyed frequently.</p>
+</li>
+<li>
+<p><strong>Preconfigured Pools</strong>:<br>
+The system can instantiate multiple FixedSizeAllocator pools for different block sizes. For example, the project sets up pools for sizes ~16 bytes, 32 bytes, 96 bytes, 256 bytes, and 1024 bytes (with various block counts). Each pool occupies a portion of the overall memory buffer. This segregated pool approach means small objects are handled in their own arenas, which <strong>prevents fragmentation</strong> between small and large allocations and takes advantage of size-specific optimizations.</p>
+</li>
 </ul>
-
-
-<h4 class="relative group">How It Works: 
-    <div id="how-it-works" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#how-it-works" aria-label="Anchor">#</a>
-    </span>        
-    
-</h4>
-<ul>
-<li>On insertion, check the hash map for existing nodes with higher costs.</li>
-<li>When popping, validate the node against the hash map.</li>
-<li>Outdated nodes are lazily discarded.</li>
-</ul>
-<p>This ensures efficient retrieval, insertion, and cost management without needing direct priority adjustments.</p>
 <hr>
 
 
-<h2 class="relative group">🎯 Heuristics 
-    <div id="-heuristics" class="anchor"></div>
+<h2 class="relative group">HeapManager 
+    <div id="heapmanager" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-heuristics" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#heapmanager" aria-label="Anchor">#</a>
+    </span>        
+    
+</h2>
+<p>The <strong>HeapManager</strong> is a general-purpose allocator that manages a large memory region for variable-size allocations. It functions like a simplified heap within the provided buffer, using a <strong>linked-list of memory blocks</strong> to track free and allocated regions. Important aspects of the HeapManager include:</p>
+
+
+<h3 class="relative group">Key Aspects 
+    <div id="key-aspects" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#key-aspects" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>
+<p><strong>Memory Block Metadata</strong>:<br>
+The HeapManager represents each free or allocated chunk with a <code>MemoryBlock</code> structure containing its size, a pointer to the block’s usable memory, and pointers linking to the next block in the list. These <code>MemoryBlock</code> descriptors are stored <strong>in-place</strong> in the managed memory itself. In other words, when a block is allocated, the system carves out space for a <code>MemoryBlock</code> header at the start of that block’s region, rather than allocating metadata elsewhere. This in-place metadata design avoids extra allocations and ensures the entire memory system operates within the single provided buffer.</p>
+</li>
+<li>
+<p><strong>Allocation with Alignment</strong>:<br>
+The allocator honors alignment requirements for allocated blocks.When fulfilling an allocation request, it calculates any necessary padding to satisfy the requested alignment. The HeapManager is designed to utilize any existing alignment gap in a free block before splitting it, thereby maximizing usable memory.Internally, it computes an adjustment offset so that the returned pointer meets the alignment (using a formula based on the address modulo alignment). If a free block is larger than needed, the HeapManager will <strong>split or shrink</strong> the block: it allocates the portion needed (with an aligned address) and leaves the remainder as a smaller free block in the list. The allocated block’s metadata stores how much alignment adjustment was applied, so that this padding can be recovered later if the block is freed.</p>
+</li>
+<li>
+<p><strong>Free List &amp; Coalescing</strong>:<br>
+All free memory blocks are maintained in a singly-linked list, sorted by their memory address. When a block is freed, it’s inserted back into the free list in address order, which prepares the system for efficient coalescing. The <strong>Collect</strong> operation (garbage collection) traverses the free list and <strong>merges adjacent free blocks</strong> into one larger block. For example, if a freed block lies immediately next to another free block in memory, they are combined into a single continuous free region. This coalescing reduces fragmentation over time and maximizes the size of contiguous free memory available for big allocations. The allocator may call <code>Collect()</code> automatically if an allocation request fails due to fragmentation, and then retry the request to see if memory has been liberated by merging small frees into larger ones.</p>
+</li>
+<li>
+<p><strong>First-Fit Strategy</strong>:<br>
+The HeapManager’s allocation strategy scans the free list for the first block that can satisfy the request (considering size + alignment). This <strong>first-fit approach</strong> tends to be fast and works well when free list is maintained in order. The code returns the first suitable free block found. This strategy, combined with coalescing, helps keep fragmentation low without heavy computation. There’s also support for querying the heap state (functions like <code>GetLargestFreeBlockSize()</code> and <code>ShowFreeBlocks()</code>) so developers can monitor memory usage and fragmentation at runtime.</p>
+</li>
+<li>
+<p><strong>Descriptor Pool (Optional)</strong>:<br>
+The initializer takes a <code>numDescriptors</code> parameter which could be used to pre-reserve a pool of <code>MemoryBlock</code> descriptors. In the current implementation, the HeapManager doesn’t explicitly allocate a descriptor array; instead, it creates <code>MemoryBlock</code> structs on the fly in free memory as needed.  The comment in <code>main.cpp</code> suggests a descriptor pool might be an optional optimization (to avoid using the managed heap for metadata at all)<a href="https://github.com/FutureWayne/Memory-Allocator/blob/399d2b229e25a78442369a9c962a2b9ef9f954b0/main.cpp" target="_blank">GitHub</a>, but the current design effectively inlines metadata into the free space.</p>
+</li>
+</ul>
+<hr>
+
+
+<h2 class="relative group">Code Highlights 
+    <div id="code-highlights" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#code-highlights" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 
 
-<h3 class="relative group">📏 Euclidean Heuristic 
-    <div id="-euclidean-heuristic" class="anchor"></div>
+<h3 class="relative group">Noteworthy Techniques 
+    <div id="noteworthy-techniques" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-euclidean-heuristic" aria-label="Anchor">#</a>
-    </span>        
-    
-</h3>
-<ul>
-<li>Uses straight-line distance.</li>
-<li><strong>Admissible</strong> and <strong>consistent</strong> in both weighted graphs and grid-based layouts.</li>
-<li>Perfect for scenarios where edge weights correlate with distance.</li>
-</ul>
-<hr>
-
-
-<h3 class="relative group">📐 Squared Distance Heuristic 
-    <div id="-squared-distance-heuristic" class="anchor"></div>
-    
-    <span
-        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
-        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-squared-distance-heuristic" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#noteworthy-techniques" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
 <ul>
 <li>
-<p>Uses squared Euclidean distance: heuristic = dx² + dy²</p>
+<p><strong>Multiple Allocator Strategy</strong>:<br>
+The integration of fixed-size allocators with a general heap is implemented by overriding the global <code>malloc/free</code> functions.  The custom <code>malloc</code> checks each FixedSizeAllocator and uses the first one large enough to handle the request; if none qualify, it delegates to the HeapManager. Similarly, <code>free</code> determines which allocator owns the pointer and frees it in the appropriate pool or heap. This design cleanly abstracts the two-tier allocator to the user – a caller can simply use <code>malloc</code> or <code>new</code> and not worry whether the memory came from a pool or the heap. It’s a good example of customizing global operators in C++ to plug in a custom system transparently</p>
 </li>
 <li>
-<p><strong>Not admissible</strong>—it overestimates costs.</p>
+<p><strong>In-Place Memory Management</strong>:<br>
+The allocator avoids external dependencies by constructing all its control structures inside the provided memory buffer. For instance, when splitting a free block, the <code>createNewBlock</code> function uses pointer arithmetic to place a new <code>MemoryBlock</code> struct at the start of the newly allocated portion. The <code>MemoryBlock::pBaseAddress</code> then points to the usable memory right after that header. This in-place approach means the allocator has zero reliance on the default heap for its bookkeeping – all metadata lives in the same memory region it manages. It’s an efficient low-level technique that ensures the custom allocator is self-contained.</p>
 </li>
 <li>
-<p>Leads to faster computation but risks invalid paths due to inconsistency.</p>
+<p><strong>Pointer Arithmetic and Alignment</strong>:<br>
+The code makes heavy use of pointer arithmetic for efficiency and alignment. Utility inline functions like <code>PointerAdd</code> and <code>PointerSub</code> abstract the casting and arithmetic on <code>void*</code> pointers.  Alignment calculations use bitwise operations – for example, computing the required padding so that <code>(baseAddress + padding)</code> satisfies the alignment constraint (using the formula <code>(alignment - (addr mod alignment)) mod alignment</code>). This demonstrates a solid understanding of how to work with memory addresses in C++ and ensure aligned allocations for performance (critical when dealing with SIMD, cache lines, or platform requirements in games).</p>
+</li>
+<li>
+<p><strong>BitArray for Fast Lookup</strong>:<br>
+The custom <code>BitArray</code> class in the Utilities module provides methods to set, clear, and find bits efficiently. The FixedSizeAllocator leverages this to quickly find free blocks. In the code, a simple loop checks each bit (which is already fast for small block counts), but the BitArray also has methods like <code>FindFirstClearBit</code> that could be used to further optimize this. Using a bit array instead of, say, a linked list of free nodes, minimizes memory overhead and can potentially utilize bit-level parallelism (some operations might be optimized with CPU bit scan instructions). This is an idiomatic low-level optimization often used in game engines for allocating from fixed pools.</p>
+</li>
+<li>
+<p><strong>Memory Safety Checks</strong>:<br>
+Beyond guardbands, the code is fortified with runtime assertions (<code>assert</code>) in debug mode to catch errors and invalid usage. For example, it asserts that pointers passed to Free belong to the heap before attempting to free,  and that allocations requested are not zero-size, etc. The guardband feature itself checks that the known pattern is intact on both ends of a block during deallocation, which helps detect buffer overruns early. These defensive programming practices are important in systems programming and demonstrate attention to reliability – a crucial trait for engine-level code that gameplay programmers might write or maintain.</p>
+</li>
+<li>
+<p><strong>Debugging and Leak Detection</strong>:<br>
+The project integrates with the MSVC debug heap to detect memory leaks – for instance, the <code>main.cpp</code> enables <code>_CRTDBG_MAP_ALLOC</code> and calls <code>_CrtDumpMemoryLeaks()</code> at the end of execution. Additionally, because global <code>new</code> and <code>delete</code> are overridden, any usage of <code>new</code> in the code (such as the test at the end of <code>MemorySystem_UnitTest</code>) will route through the custom allocator. This means the entire program’s dynamic memory usage is under the purview of the custom system, making it easier to track and verify that no leaks occur (since the custom allocator can report if all memory was freed). The inclusion of unit tests (for the memory system, bit array, and fixed allocator) in <code>main.cpp</code> is also a highlight – it shows thorough verification of the allocator’s correctness under various scenarios (random allocations, frees, coalescing checks, etc.)</p>
 </li>
 </ul>
 <hr>
 
 
-<h2 class="relative group">📊 Algorithm Analysis 
-    <div id="-algorithm-analysis" class="anchor"></div>
+<h2 class="relative group">Usage Instructions 
+    <div id="usage-instructions" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-algorithm-analysis" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#usage-instructions" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
 
 
-<h3 class="relative group">Performance on Very Big™ Graph 
-    <div id="performance-on-very-big-graph" class="anchor"></div>
+<h3 class="relative group">Build the Project 
+    <div id="build-the-project" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#performance-on-very-big-graph" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#build-the-project" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
-<p>Starting from the center:</p>
 <ul>
-<li><strong>Dijkstra:</strong> Explores uniformly outward, forming a circular search pattern.</li>
-<li><strong>A*:</strong> Focused search guided by heuristics, reducing unnecessary node expansions.</li>
+<li>Open <code>Memory Allocator.sln</code> in Visual Studio (or compile with a C++17-compatible compiler on Windows).</li>
+<li>Debug mode enables guardbands and leak checks.</li>
+<li>Executable runs unit tests on launch.</li>
 </ul>
-<blockquote>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/2d-game--ai-engine/images/graph1_hu3648214675797818859.png 330w,
-        /posts/2d-game--ai-engine/images/graph1_hu12417640578606096300.png 660w,
-        /posts/2d-game--ai-engine/images/graph1_hu15261987353378515213.png 1024w,
-        /posts/2d-game--ai-engine/images/graph1_hu1126256232198485430.png 2x"
-        src="/posts/2d-game--ai-engine/images/graph1_hu12417640578606096300.png"
-        alt=""
-      />
-      
-    </figure>
-</p>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/2d-game--ai-engine/images/graph2_hu6293472510572892531.png 330w,
-        /posts/2d-game--ai-engine/images/graph2_hu586660711522259975.png 660w,
-        /posts/2d-game--ai-engine/images/graph2_hu6639121750002908216.png 1024w,
-        /posts/2d-game--ai-engine/images/graph2_hu8502333222506372516.png 2x"
-        src="/posts/2d-game--ai-engine/images/graph2_hu586660711522259975.png"
-        alt=""
-      />
-      
-    </figure>
-</p>
-</blockquote>
-<hr>
 
 
-<h3 class="relative group">Heuristic Impact on A* 
-    <div id="heuristic-impact-on-a" class="anchor"></div>
+<h3 class="relative group">Initialize Memory System 
+    <div id="initialize-memory-system" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#heuristic-impact-on-a" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#initialize-memory-system" aria-label="Anchor">#</a>
     </span>        
     
 </h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">InitializeMemorySystem</span><span class="p">(</span><span class="kt">void</span><span class="o">*</span> <span class="n">pHeapMemory</span><span class="p">,</span> <span class="n">size_t</span> <span class="n">heapSize</span><span class="p">,</span> <span class="kt">unsigned</span> <span class="n">numDescriptors</span><span class="p">);</span>
+</span></span></code></pre></div><ul>
+<li>Allocate a memory block (e.g. via <code>HeapAlloc</code>).</li>
+<li>Set up pools and heap manager inside the block.</li>
+</ul>
 
 
-<h4 class="relative group">Overestimating Heuristic: 
-    <div id="overestimating-heuristic" class="anchor"></div>
+<h3 class="relative group">Allocate Memory 
+    <div id="allocate-memory" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#overestimating-heuristic" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#allocate-memory" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h3>
 <ul>
-<li>Reduces nodes explored.</li>
-<li>Faster execution.</li>
-<li>May skip optimal paths.</li>
+<li>Use <code>malloc</code>, <code>new</code>, or the allocator&rsquo;s own <code>Alloc()</code> functions.</li>
+<li>Allocations are automatically routed through the system.</li>
+<li>Global pointers: <code>g_pHeapManager</code>, <code>g_pFixedSizeAllocators</code>.</li>
 </ul>
 
 
-<h4 class="relative group">Underestimating Heuristic: 
-    <div id="underestimating-heuristic" class="anchor"></div>
+<h3 class="relative group">Free Memory 
+    <div id="free-memory" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#underestimating-heuristic" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#free-memory" aria-label="Anchor">#</a>
     </span>        
     
-</h4>
+</h3>
 <ul>
-<li>Explores more nodes.</li>
-<li>Guarantees shortest path.</li>
-<li>Higher computational cost.</li>
+<li>Use <code>free</code> or <code>delete</code>.</li>
+<li>Freed memory returns to correct pool/heap.</li>
+<li>Optional: call <code>Collect()</code> to merge free blocks.</li>
 </ul>
-<blockquote>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/2d-game--ai-engine/images/heuristic1_hu17097437011476866708.png 330w,
-        /posts/2d-game--ai-engine/images/heuristic1_hu10015203515761355908.png 660w,
-        /posts/2d-game--ai-engine/images/heuristic1_hu11464881834737606229.png 1024w,
-        /posts/2d-game--ai-engine/images/heuristic1_hu12886486461338893149.png 2x"
-        src="/posts/2d-game--ai-engine/images/heuristic1_hu10015203515761355908.png"
-        alt=""
-      />
-      
-    </figure>
-</p>
-<p>
-    <figure>
-      <img
-        class="my-0 rounded-md"
-        loading="lazy"
-        srcset="
-        /posts/2d-game--ai-engine/images/heuristic2_hu6073468170970409105.png 330w,
-        /posts/2d-game--ai-engine/images/heuristic2_hu13708708404081483731.png 660w,
-        /posts/2d-game--ai-engine/images/heuristic2_hu1697909576626560635.png 1024w,
-        /posts/2d-game--ai-engine/images/heuristic2_hu642019904231118947.png 2x"
-        src="/posts/2d-game--ai-engine/images/heuristic2_hu13708708404081483731.png"
-        alt=""
-      />
-      
-    </figure>
-</p>
-</blockquote>
+
+
+<h3 class="relative group">Shutdown 
+    <div id="shutdown" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#shutdown" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-cpp" data-lang="cpp"><span class="line"><span class="cl"><span class="n">DestroyMemorySystem</span><span class="p">();</span>
+</span></span></code></pre></div><ul>
+<li>Cleans up allocators.</li>
+<li>Releases base memory block (e.g., via <code>HeapFree</code>).</li>
+</ul>
+
+
+<h3 class="relative group">Run &amp; Test 
+    <div id="run--test" class="anchor"></div>
+    
+    <span
+        class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
+        <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
+            style="text-decoration-line: none !important;" href="#run--test" aria-label="Anchor">#</a>
+    </span>        
+    
+</h3>
+<ul>
+<li>Unit tests validate allocations, frees, and garbage collection.</li>
+<li>Ready to embed into a game engine or project.</li>
+</ul>
 <hr>
 
 
-<h2 class="relative group">📝 Conclusion 
-    <div id="-conclusion" class="anchor"></div>
+<h2 class="relative group">Potential Extensions 
+    <div id="potential-extensions" class="anchor"></div>
     
     <span
         class="absolute top-0 w-6 transition-opacity opacity-0 ltr:-left-6 rtl:-right-6 not-prose group-hover:opacity-100">
         <a class="group-hover:text-primary-300 dark:group-hover:text-neutral-700"
-            style="text-decoration-line: none !important;" href="#-conclusion" aria-label="Anchor">#</a>
+            style="text-decoration-line: none !important;" href="#potential-extensions" aria-label="Anchor">#</a>
     </span>        
     
 </h2>
-<p>In this project, I explored both classic and advanced aspects of pathfinding:</p>
 <ul>
-<li>Implemented <strong>Dijkstra</strong> and <strong>A*</strong> across diverse graph types.</li>
-<li>Designed a <strong>custom data structure</strong> to optimize Open List operations.</li>
-<li>Analyzed heuristic strategies to balance speed vs accuracy.</li>
+<li>
+<p><strong>Game Engine Integration</strong>:<br>
+Integrate with Unreal/Unity systems and profilers.</p>
+</li>
+<li>
+<p><strong>Memory Tracking &amp; Profiling</strong>:<br>
+Track allocation stats, group by gameplay system, expose via debug UI.</p>
+</li>
+<li>
+<p><strong>Thread-Safety</strong>:<br>
+Add locks or thread-local allocators. Explore lock-free free list algorithms.</p>
+</li>
+<li>
+<p><strong>Additional Allocator Types</strong>:<br>
+Stack Allocator (LIFO), Buddy Allocator, etc.</p>
+</li>
+<li>
+<p><strong>Dynamic Resize/Customization</strong>:<br>
+Allow runtime heap growth or runtime-configured pool sizes.</p>
+</li>
+<li>
+<p><strong>Garbage Collection Strategies</strong>:<br>
+Periodic or background <code>Collect()</code> execution to improve large block availability.</p>
+</li>
 </ul>
-<p>This comprehensive study sharpened my understanding of algorithm efficiency, data structure design, and practical AI navigation challenges in both game-like and abstract environments.</p>
 <hr>
 
           
@@ -1777,7 +1229,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:1313/posts/2d-game--ai-engine/&amp;title=Developing%20Smarter%20AI:%20Steering%20Behaviors%20and%20Pathfinding%20Algorithms"
+      href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://localhost:1313/posts/memory-allocator/&amp;title=Custom%20Memory%20Allocator"
       title="Share on LinkedIn"
       aria-label="Share on LinkedIn"
       >
@@ -1796,7 +1248,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://twitter.com/intent/tweet/?url=http://localhost:1313/posts/2d-game--ai-engine/&amp;text=Developing%20Smarter%20AI:%20Steering%20Behaviors%20and%20Pathfinding%20Algorithms"
+      href="https://twitter.com/intent/tweet/?url=http://localhost:1313/posts/memory-allocator/&amp;text=Custom%20Memory%20Allocator"
       title="Tweet on Twitter"
       aria-label="Tweet on Twitter"
       >
@@ -1814,7 +1266,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://api.whatsapp.com/send?text=http://localhost:1313/posts/2d-game--ai-engine/&amp;resubmit=true&amp;title=Developing%20Smarter%20AI:%20Steering%20Behaviors%20and%20Pathfinding%20Algorithms"
+      href="https://api.whatsapp.com/send?text=http://localhost:1313/posts/memory-allocator/&amp;resubmit=true&amp;title=Custom%20Memory%20Allocator"
       title="Share via WhatsApp"
       aria-label="Share via WhatsApp"
       >
@@ -1833,7 +1285,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://pinterest.com/pin/create/bookmarklet/?url=http://localhost:1313/posts/2d-game--ai-engine/&amp;description=Developing%20Smarter%20AI:%20Steering%20Behaviors%20and%20Pathfinding%20Algorithms"
+      href="https://pinterest.com/pin/create/bookmarklet/?url=http://localhost:1313/posts/memory-allocator/&amp;description=Custom%20Memory%20Allocator"
       title="Pin on Pinterest"
       aria-label="Pin on Pinterest"
       >
@@ -1852,7 +1304,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://reddit.com/submit/?url=http://localhost:1313/posts/2d-game--ai-engine/&amp;resubmit=true&amp;title=Developing%20Smarter%20AI:%20Steering%20Behaviors%20and%20Pathfinding%20Algorithms"
+      href="https://reddit.com/submit/?url=http://localhost:1313/posts/memory-allocator/&amp;resubmit=true&amp;title=Custom%20Memory%20Allocator"
       title="Submit to Reddit"
       aria-label="Submit to Reddit"
       >
@@ -1871,7 +1323,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/2d-game--ai-engine/&amp;quote=Developing%20Smarter%20AI:%20Steering%20Behaviors%20and%20Pathfinding%20Algorithms"
+      href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:1313/posts/memory-allocator/&amp;quote=Custom%20Memory%20Allocator"
       title="Share on Facebook"
       aria-label="Share on Facebook"
       >
@@ -1890,7 +1342,7 @@
       <a
       target="_blank"
       class="m-1 rounded bg-neutral-300 p-1.5 text-neutral-700 hover:bg-primary-500 hover:text-neutral dark:bg-neutral-700 dark:text-neutral-300 dark:hover:bg-primary-400 dark:hover:text-neutral-800"
-      href="mailto:?body=http://localhost:1313/posts/2d-game--ai-engine/&amp;subject=Developing%20Smarter%20AI:%20Steering%20Behaviors%20and%20Pathfinding%20Algorithms"
+      href="mailto:?body=http://localhost:1313/posts/memory-allocator/&amp;subject=Custom%20Memory%20Allocator"
       title="Send via email"
       aria-label="Send via email"
       >
@@ -1919,8 +1371,8 @@
           
         
       <script>
-        var oid = "views_posts\\2D Game \u0026 AI Engine\\index.md"
-        var oid_likes = "likes_posts\\2D Game \u0026 AI Engine\\index.md"
+        var oid = "views_posts\\Memory Allocator\\index.md"
+        var oid_likes = "likes_posts\\Memory Allocator\\index.md"
       </script>
       
       
@@ -1940,7 +1392,7 @@
       <div class="flex justify-between pt-3">
         <span>
           
-            <a class="flex group mr-3" href="/posts/memory-allocator/">
+            <a class="flex group mr-3" href="/posts/unity-dialogue-editor/">
               <span
                 class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
                 >&larr;</span
@@ -1952,7 +1404,7 @@
               <span class="flex flex-col">
                 <span
                   class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
-                  >Custom Memory Allocator</span
+                  >Unity Dialogue Editor</span
                 >
                 <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
                   
@@ -1964,6 +1416,28 @@
           
         </span>
         <span>
+          
+            <a class="flex text-right group ml-3" href="/posts/2d-game--ai-engine/">
+              <span class="flex flex-col">
+                <span
+                  class="mt-[0.1rem] leading-6 group-hover:underline group-hover:decoration-primary-500"
+                  >Developing Smarter AI: Steering Behaviors and Pathfinding Algorithms</span
+                >
+                <span class="mt-[0.1rem] text-xs text-neutral-500 dark:text-neutral-400">
+                  
+                    <time datetime="2024-01-04T00:00:00&#43;00:00">4 January 2024</time>
+                  
+                </span>
+              </span>
+              <span
+                class="ml-3 text-neutral-700 group-hover:text-primary-600 ltr:inline rtl:hidden dark:text-neutral dark:group-hover:text-primary-400"
+                >&rarr;</span
+              >
+              <span
+                class="mr-3 text-neutral-700 group-hover:text-primary-600 ltr:hidden rtl:inline dark:text-neutral dark:group-hover:text-primary-400"
+                >&larr;</span
+              >
+            </a>
           
         </span>
       </div>

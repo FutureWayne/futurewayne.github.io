@@ -22,6 +22,16 @@
     </item>
     
     <item>
+      <title>Custom Memory Allocator</title>
+      <link>http://localhost:1313/posts/memory-allocator/</link>
+      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      <author>futurewayne.ludens@gmail.com (Lai (Wayne) Wei)</author>
+      <guid>http://localhost:1313/posts/memory-allocator/</guid>
+      <description>A custom memory allocator system in C++</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/memory-allocator/cover.png" />
+    </item>
+    
+    <item>
       <title>Unity Dialogue Editor</title>
       <link>http://localhost:1313/posts/unity-dialogue-editor/</link>
       <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
