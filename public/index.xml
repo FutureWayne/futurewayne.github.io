@@ -22,6 +22,16 @@
     </item>
     
     <item>
+      <title>Cross-platform Game Engine</title>
+      <link>http://localhost:1313/posts/cross-platform-3d-engine/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <author>futurewayne.ludens@gmail.com (Lai (Wayne) Wei)</author>
+      <guid>http://localhost:1313/posts/cross-platform-3d-engine/</guid>
+      <description>A 3D game engine supporting Direct 3D and OpenGL across multiple architectures.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/cross-platform-3d-engine/cover.png" />
+    </item>
+    
+    <item>
       <title>Developing Smarter AI: Steering Behaviors and Pathfinding Algorithms</title>
       <link>http://localhost:1313/posts/2d-game--ai-engine/</link>
       <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>

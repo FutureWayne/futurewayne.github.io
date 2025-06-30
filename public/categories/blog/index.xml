@@ -22,9 +22,19 @@
     </item>
     
     <item>
+      <title>Cross-platform Game Engine</title>
+      <link>http://localhost:1313/posts/cross-platform-3d-engine/</link>
+      <pubDate>Wed, 01 Jan 2025 00:00:00 +0000</pubDate>
+      <author>futurewayne.ludens@gmail.com (Lai (Wayne) Wei)</author>
+      <guid>http://localhost:1313/posts/cross-platform-3d-engine/</guid>
+      <description>A 3D game engine supporting Direct 3D and OpenGL across multiple architectures.</description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/cross-platform-3d-engine/cover.png" />
+    </item>
+    
+    <item>
       <title>Developing Smarter AI: Steering Behaviors and Pathfinding Algorithms</title>
       <link>http://localhost:1313/posts/2d-game--ai-engine/</link>
-      <pubDate>Thu, 04 Jan 2024 00:00:00 +0000</pubDate>
+      <pubDate>Sun, 01 Sep 2024 00:00:00 +0000</pubDate>
       <author>futurewayne.ludens@gmail.com (Lai (Wayne) Wei)</author>
       <guid>http://localhost:1313/posts/2d-game--ai-engine/</guid>
       <description>In this blog, I’ll walk through my journey of developing AI behaviors, focusing on dynamic steering systems and efficient pathfinding algorithms. From crafting lifelike boid movements to optimizing search strategies in complex environments, this project deepened my understanding of both kinematic motion and algorithmic problem-solving..</description>
@@ -34,7 +44,7 @@
     <item>
       <title>Custom Memory Allocator</title>
       <link>http://localhost:1313/posts/memory-allocator/</link>
-      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 01 Jan 2024 00:00:00 +0000</pubDate>
       <author>futurewayne.ludens@gmail.com (Lai (Wayne) Wei)</author>
       <guid>http://localhost:1313/posts/memory-allocator/</guid>
       <description>A custom memory allocator system in C++</description>
@@ -44,7 +54,7 @@
     <item>
       <title>Unity Dialogue Editor</title>
       <link>http://localhost:1313/posts/unity-dialogue-editor/</link>
-      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
       <author>futurewayne.ludens@gmail.com (Lai (Wayne) Wei)</author>
       <guid>http://localhost:1313/posts/unity-dialogue-editor/</guid>
       <description>A visual custom Unity editor interface for creating and managing branching dialogues.</description>

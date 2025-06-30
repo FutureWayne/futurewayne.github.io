@@ -9,12 +9,12 @@
     <managingEditor>futurewayne.ludens@gmail.com (Lai (Wayne) Wei)</managingEditor>
     <webMaster>futurewayne.ludens@gmail.com (Lai (Wayne) Wei)</webMaster>
     <copyright>© 2025 Lai (Wayne) Wei</copyright>
-    <lastBuildDate>Sun, 04 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/unity/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 01 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/unity/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Unity Dialogue Editor</title>
       <link>http://localhost:1313/posts/unity-dialogue-editor/</link>
-      <pubDate>Sun, 04 Sep 2022 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 01 Nov 2023 00:00:00 +0000</pubDate>
       <author>futurewayne.ludens@gmail.com (Lai (Wayne) Wei)</author>
       <guid>http://localhost:1313/posts/unity-dialogue-editor/</guid>
       <description>A visual custom Unity editor interface for creating and managing branching dialogues.</description>

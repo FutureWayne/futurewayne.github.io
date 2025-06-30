@@ -15,20 +15,26 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>http://localhost:1313/posts/cross-platform-3d-engine/</loc>
+    <lastmod>2025-01-01T00:00:00+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>http://localhost:1313/posts/2d-game--ai-engine/</loc>
-    <lastmod>2024-01-04T00:00:00+00:00</lastmod>
+    <lastmod>2024-09-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/posts/memory-allocator/</loc>
-    <lastmod>2022-09-04T00:00:00+00:00</lastmod>
+    <lastmod>2024-01-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>http://localhost:1313/posts/unity-dialogue-editor/</loc>
-    <lastmod>2022-09-04T00:00:00+00:00</lastmod>
+    <lastmod>2023-11-01T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
